@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tuba B1+ · Lesson 4 — Present Perfect vs Past Simple</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fdf8f4;--surface:#fff;--surface2:#fdf0e8;--surface3:#f9ece3;
+  --border:#e8d5c4;--border2:#d4b99e;
+  --terra:#c1440e;--terra-l:#d4561f;--terra-dim:rgba(193,68,14,0.1);
+  --warm:#e07b39;--warm-dim:rgba(224,123,57,0.12);
+  --sage:#5f7c5e;--sage-dim:rgba(95,124,94,0.1);
+  --sky:#4a7fa5;--sky-dim:rgba(74,127,165,0.1);
+  --amber:#c4862a;--amber-dim:rgba(196,134,42,0.12);
+  --red:#c0392b;--red-dim:rgba(192,57,43,0.1);
+  --green:#4a7c59;--green-dim:rgba(74,124,89,0.1);
+  --violet:#7c5c9e;--violet-dim:rgba(124,92,158,0.1);
+  --text:#2c1a0e;--muted:#7a5c44;--muted2:#b8967a;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-weight:400;}
+body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(circle,rgba(193,68,14,0.04) 1px,transparent 1px);background-size:36px 36px;pointer-events:none;z-index:0;}
+.page{max-width:820px;margin:0 auto;padding:36px 18px 90px;position:relative;z-index:1;}
+.lh{border-radius:20px;padding:26px 28px 30px;margin-bottom:20px;position:relative;overflow:hidden;}
+.l-tag{display:inline-block;background:rgba(255,255,255,0.28);border:1.5px solid rgba(255,255,255,0.4);border-radius:50px;padding:3px 13px;font-size:10px;font-weight:800;color:#fff;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;}
+.lh h1{font-family:'Playfair Display',serif;font-size:clamp(22px,5vw,38px);color:#fff;line-height:1.1;margin-bottom:7px;font-style:italic;}
+.lh p{font-size:13px;color:rgba(255,255,255,0.88);font-weight:600;margin-bottom:14px;}
+.l-meta{display:flex;gap:7px;flex-wrap:wrap;}
+.l-meta span{background:rgba(255,255,255,0.2);border:1.5px solid rgba(255,255,255,0.3);border-radius:50px;padding:3px 11px;font-size:10px;font-weight:700;color:#fff;}
+.prog{background:var(--surface);border:2px solid var(--border);border-radius:13px;padding:10px 15px;display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.prog-lbl{font-size:10px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;white-space:nowrap;}
+.prog-steps{display:flex;gap:4px;flex:1;}
+.prog-step{flex:1;height:6px;border-radius:6px;background:var(--border);}
+.prog-step.done{background:var(--terra);}
+.prog-step.active{background:var(--warm);}
+.prog-pct{font-size:14px;font-weight:800;color:var(--terra);}
+.block{background:var(--surface);border:2px solid var(--border);border-radius:16px;margin-bottom:10px;overflow:hidden;transition:border-color 0.2s;}
+.block:hover{border-color:var(--border2);}
+.block-top{display:flex;align-items:center;gap:11px;padding:13px 17px;border-bottom:2px dashed var(--border);cursor:pointer;user-select:none;}
+.b-ico{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+.b-meta{flex:1;}
+.b-meta h2{font-size:14px;font-weight:800;color:var(--text);margin-bottom:1px;}
+.b-meta p{font-size:11px;font-weight:600;color:var(--muted);}
+.b-tag{font-size:10px;font-weight:800;padding:3px 10px;border-radius:50px;border:2px solid var(--border);color:var(--muted);white-space:nowrap;}
+.b-chev{color:var(--muted);font-size:11px;transition:transform 0.25s;flex-shrink:0;}
+.block-body{padding:0 17px;max-height:0;overflow:hidden;transition:max-height 0.5s ease,padding 0.3s;}
+.block-body.open{max-height:4000px;padding:16px 17px 20px;}
+.gram{border-left:3px solid var(--terra);padding:12px 15px;margin-bottom:12px;background:var(--terra-dim);border-radius:0 10px 10px 0;}
+.gram h3{font-size:12px;font-weight:800;color:var(--terra);margin-bottom:7px;text-transform:uppercase;letter-spacing:0.06em;}
+.gram p{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:7px;}
+.gram-warm{border-left:3px solid var(--warm);padding:12px 15px;margin-bottom:12px;background:var(--warm-dim);border-radius:0 10px 10px 0;}
+.gram-warm h3{font-size:12px;font-weight:800;color:var(--warm);margin-bottom:7px;text-transform:uppercase;letter-spacing:0.06em;}
+.gram-warm p{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:7px;}
+.gram-sage{border-left:3px solid var(--sage);padding:12px 15px;margin-bottom:12px;background:var(--sage-dim);border-radius:0 10px 10px 0;}
+.gram-sage h3{font-size:12px;font-weight:800;color:var(--sage);margin-bottom:7px;text-transform:uppercase;letter-spacing:0.06em;}
+.gram-sage p{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:7px;}
+.formula{background:var(--surface);border:1.5px solid var(--border);border-radius:9px;padding:10px 13px;margin-bottom:9px;font-size:13px;font-weight:700;line-height:2.1;}
+.fok{color:var(--green);}
+.ferr{color:var(--red);}
+.fhi{color:var(--terra);}
+.famb{color:var(--amber);}
+.tr-note{background:var(--amber-dim);border:1.5px solid var(--amber);border-radius:8px;padding:6px 11px;font-size:11.5px;font-weight:700;color:#7a4a0a;margin-top:7px;display:flex;gap:7px;}
+.callout{border:1.5px solid var(--border);border-left:3px solid var(--sky);background:var(--sky-dim);padding:9px 13px;font-size:12.5px;color:var(--muted);line-height:1.65;margin:10px 0;border-radius:0 9px 9px 0;}
+.callout strong{color:var(--text);}
+.vc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:7px;margin-bottom:12px;}
+.vc{background:var(--surface2);border:2px solid var(--border);border-radius:11px;padding:10px 12px;cursor:pointer;transition:all 0.18s;}
+.vc:hover{border-color:var(--terra);transform:scale(1.02);}
+.vc.flip{border-color:var(--terra);background:var(--terra-dim);}
+.vc-cat{font-size:9px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;}
+.vc-term{font-size:14px;font-weight:800;color:var(--terra);margin-bottom:2px;}
+.vc-past{font-size:13px;font-weight:700;color:var(--warm);}
+.vc-tr{font-size:11px;color:var(--muted);margin-top:3px;display:none;font-style:italic;}
+.vc-ex{font-size:11px;color:var(--muted);display:none;margin-top:4px;line-height:1.45;}
+.vc.flip .vc-tr,.vc.flip .vc-ex{display:block;}
+.ex-hdr{font-size:10px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:10px;display:flex;align-items:center;gap:9px;}
+.ex-hdr::after{content:'';flex:1;height:1.5px;background:var(--border);}
+.ex-badge{background:var(--terra);color:#fff;padding:2px 10px;border-radius:50px;font-size:9px;font-weight:800;}
+.instr{font-size:12.5px;color:var(--muted);margin-bottom:10px;line-height:1.65;padding:8px 12px;background:var(--surface2);border-left:3px solid var(--border);border-radius:0 8px 8px 0;}
+
+/* FILL IN — no placeholder hint style */
+.fi-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:5px;padding:10px 13px;background:var(--surface2);border:2px solid var(--border);border-radius:11px;margin-bottom:6px;font-size:13.5px;font-weight:600;line-height:2;}
+.fi-n{font-size:10px;font-weight:800;color:var(--muted2);min-width:22px;flex-shrink:0;}
+.fi-inp{display:inline-block;min-width:130px;padding:2px 7px;border:none;border-bottom:2px solid var(--border2);background:transparent;font-family:'Nunito',sans-serif;font-size:13.5px;font-weight:700;color:var(--text);outline:none;transition:border-color 0.2s;vertical-align:baseline;}
+.fi-inp:focus{border-bottom-color:var(--terra);}
+.fi-inp.ok{border-bottom-color:var(--green);color:var(--green);}
+.fi-inp.no{border-bottom-color:var(--red);color:var(--red);}
+.chk{padding:3px 10px;background:var(--terra);color:#fff;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:10px;font-weight:800;cursor:pointer;vertical-align:middle;margin-left:3px;}
+.chk:hover{background:var(--warm);}
+
+/* MC */
+.mc-block{background:var(--surface2);border:2px solid var(--border);border-radius:11px;padding:12px 14px;margin-bottom:8px;}
+.mc-q{font-size:13.5px;font-weight:700;color:var(--text);margin-bottom:9px;line-height:1.6;}
+.mc-opts{display:flex;flex-direction:column;gap:5px;}
+.mc-btn{padding:8px 13px;border:2px solid var(--border);border-radius:9px;background:var(--surface);font-family:'Nunito',sans-serif;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;transition:all 0.15s;text-align:left;}
+.mc-btn:hover{border-color:var(--terra);color:var(--terra);}
+.mc-btn.cor{background:var(--green-dim);border-color:var(--green);color:var(--green);}
+.mc-btn.wrng{background:var(--red-dim);border-color:var(--red);color:var(--red);}
+.mc-fb{font-size:12px;font-weight:700;margin-top:7px;padding:6px 10px;border-radius:7px;display:none;line-height:1.6;}
+.mc-fb.show{display:block;}
+.mc-fb.ok{background:var(--green-dim);color:var(--green);}
+.mc-fb.no{background:var(--red-dim);color:var(--red);}
+
+/* ERROR CORRECTION — B1+ style: full sentence, find AND fix */
+.ec-block{background:var(--surface2);border:2px solid var(--border);border-radius:11px;padding:12px 14px;margin-bottom:8px;}
+.ec-n{font-size:10px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:5px;}
+.ec-sentence{background:var(--surface);border:1.5px solid var(--border2);border-radius:8px;padding:9px 13px;font-size:14px;font-weight:600;color:var(--text);margin-bottom:8px;line-height:1.7;}
+.ec-task{font-size:11.5px;color:var(--muted);margin-bottom:7px;font-style:italic;}
+.ec-inp{width:100%;border:2px solid var(--border);border-radius:9px;padding:8px 12px;font-family:'Nunito',sans-serif;font-size:13px;font-weight:600;color:var(--text);outline:none;background:var(--surface);}
+.ec-inp:focus{border-color:var(--terra);}
+.ec-inp.ok{border-color:var(--green);background:var(--green-dim);}
+.ec-inp.no{border-color:var(--red);background:var(--red-dim);}
+
+/* WRITING — minimal guidance */
+.write-task{background:var(--surface2);border:2px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:12px;}
+.write-task h4{font-size:13px;font-weight:800;color:var(--terra);margin-bottom:6px;}
+.write-task p{font-size:13px;color:var(--muted);line-height:1.7;}
+.write-lines{display:flex;flex-direction:column;gap:8px;}
+.write-line{border:none;border-bottom:1.5px solid var(--border2);background:transparent;font-family:'Nunito',sans-serif;font-size:13.5px;font-weight:600;color:var(--text);outline:none;padding:4px 5px;width:100%;}
+.write-line:focus{border-bottom-color:var(--terra);}
+
+.main-btn{width:100%;padding:11px;background:linear-gradient(135deg,var(--terra),var(--warm));color:#fff;border:none;border-radius:12px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:800;cursor:pointer;margin-top:10px;box-shadow:0 4px 14px rgba(193,68,14,0.22);transition:transform 0.15s,opacity 0.15s;}
+.main-btn:hover{transform:translateY(-1px);opacity:0.9;}
+.score-card{border-radius:14px;padding:18px 20px;text-align:center;display:none;margin-top:10px;}
+.score-card.show{display:block;}
+.sc-n{font-size:44px;font-weight:900;color:#fff;line-height:1;}
+.sc-n span{font-size:16px;}
+.sc-t{font-family:'Playfair Display',serif;font-size:20px;font-style:italic;color:#fff;margin:5px 0 3px;}
+.sc-b{font-size:12px;color:rgba(255,255,255,0.88);font-weight:600;}
+.lesson-nav{display:flex;justify-content:space-between;align-items:center;margin-top:28px;padding-top:18px;border-top:2px solid var(--border);}
+.nav-btn{padding:9px 20px;border:2px solid var(--border);border-radius:50px;background:var(--surface);font-family:'Nunito',sans-serif;font-size:12px;font-weight:800;color:var(--muted);cursor:pointer;transition:all 0.18s;}
+.nav-btn:hover{border-color:var(--terra);color:var(--terra);}
+.nav-btn.next{background:linear-gradient(135deg,var(--terra),var(--warm));color:#fff;border-color:transparent;box-shadow:0 4px 12px rgba(193,68,14,0.28);}
+.nav-info{font-size:11px;font-weight:700;color:var(--muted);text-align:center;line-height:1.8;}
+.save-bar{position:fixed;bottom:18px;right:18px;display:flex;gap:7px;z-index:999;}
+.save-btn{padding:7px 13px;background:var(--terra);color:#fff;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:10px;font-weight:800;cursor:pointer;box-shadow:0 3px 10px rgba(193,68,14,0.3);transition:opacity 0.15s;}
+.save-btn:hover{opacity:0.85;}
+.save-btn.reset{background:var(--surface);border:2px solid var(--border);color:var(--muted);}
+#save-toast{position:fixed;bottom:55px;right:18px;background:var(--terra);color:#fff;font-family:'Nunito',sans-serif;font-size:10px;font-weight:800;padding:6px 14px;border-radius:50px;opacity:0;transform:translateY(8px);transition:all 0.3s;pointer-events:none;z-index:1000;}
+.pair-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;}
+.pair-wrong{background:var(--red-dim);border:1.5px solid rgba(192,57,43,0.25);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:8px 11px;font-size:13px;font-weight:700;color:#7a1a0e;}
+.pair-right{background:var(--green-dim);border:1.5px solid rgba(74,124,89,0.25);border-left:3px solid var(--green);border-radius:0 8px 8px 0;padding:8px 11px;font-size:13px;font-weight:700;color:#1a4731;}
+.pair-lbl{font-size:9px;font-weight:800;opacity:0.6;margin-bottom:3px;text-transform:uppercase;}
+@media(max-width:560px){.pair-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="lh" style="background:linear-gradient(135deg,var(--terra),var(--warm),var(--amber));">
+  <div class="l-tag">B1+ · Phase 1 · Lesson 4 of 8</div>
+  <h1>Present Perfect vs Past Simple</h1>
+  <p>The most important tense distinction at B1+ &mdash; no scaffolding, real context</p>
+  <div class="l-meta"><span>⏱ 45 min</span><span>B1+ · Phase 1</span><span>PP vs PS</span><span>Grammar</span></div>
+</div>
+<div class="prog">
+  <span class="prog-lbl">Progress</span>
+  <div class="prog-steps" id="steps"><div class="prog-step active"></div><div class="prog-step"></div><div class="prog-step"></div><div class="prog-step"></div><div class="prog-step"></div><div class="prog-step"></div></div>
+  <span class="prog-pct" id="pct">0%</span>
+</div>
+<div class="block" id="s0">
+  <div class="block-top" onclick="tog(0)">
+    <div class="b-ico" style="background:var(--warm-dim);">&#9889;</div>
+    <div class="b-meta"><h2>Warm-Up &mdash; Present Perfect Recall</h2><p>Six sentences from memory</p></div>
+    <span class="b-tag">5 min</span>
+    <span class="b-chev" id="ch0" style="transform:rotate(180deg);">▼</span>
+  </div>
+  <div class="block-body open" id="b0" style="max-height:4000px;padding:16px 17px 20px;"><div class="instr">Write the correct present perfect form. No help given.</div><div class="fi-row"><span class="fi-n">1</span><span>She / work / here / since 2019 &rarr;</span><input class="fi-inp" id="w1" style="min-width:200px;" autocomplete="off" autocorrect="off" autocapitalize="off"><span></span><button class="chk" onclick="cf('w1','has worked')">✓</button></div><div class="fi-row"><span class="fi-n">2</span><span>I / never / eat / sushi &rarr;</span><input class="fi-inp" id="w2" style="min-width:200px;" autocomplete="off" autocorrect="off" autocapitalize="off"><span></span><button class="chk" onclick="cf('w2','have never eaten')">✓</button></div><div class="fi-row"><span class="fi-n">3</span><span>They / just / leave &rarr;</span><input class="fi-inp" id="w3" style="min-width:200px;" autocomplete="off" autocorrect="off" autocapitalize="off"><span></span><button class="chk" onclick="cf('w3','have just left')">✓</button></div><div class="fi-row"><span class="fi-n">4</span><span>Have you / ever / see / that film? &rarr;</span><input class="fi-inp" id="w4" style="min-width:200px;" autocomplete="off" autocorrect="off" autocapitalize="off"><span></span><button class="chk" onclick="cf('w4','seen')">✓</button></div><button class="main-btn" style="background:linear-gradient(135deg,var(--terra),var(--warm));" onclick="done(0)">Start Lesson 4 &rarr;</button></div>
+</div><div class="block" id="s1">
+  <div class="block-top" onclick="tog(1)">
+    <div class="b-ico" style="background:var(--terra-dim);">&#128214;</div>
+    <div class="b-meta"><h2>Grammar &mdash; Present Perfect vs Past Simple</h2><p>The most important tense distinction at B1+</p></div>
+    <span class="b-tag">10 min</span>
+    <span class="b-chev" id="ch1">▼</span>
+  </div>
+  <div class="block-body" id="b1"><div class="gram"><h3>THE KEY PRINCIPLE</h3><p>Both tenses refer to the past, but they frame it differently. Past simple treats an event as finished and done. Present perfect connects the past to the present in some way.</p><div class="formula"><div><span class="fhi">Specific completed time &rarr; PAST SIMPLE</span></div><div><span class="fok">I saw her yesterday. / He left in 2021. / She arrived at six.</span></div><div><span class="fhi">Unspecified time / link to present &rarr; PRESENT PERFECT</span></div><div><span class="fok">I've seen her recently. / He's left. / She's arrived.</span></div><div><span class="ferr">&#10007; I have seen her yesterday. &mdash; "yesterday" forces past simple.</span></div></div></div><div class="gram-warm"><h3>TIME EXPRESSIONS &mdash; THE SORTING RULE</h3><p>These always force <strong>past simple</strong>:</p><div class="formula"><div><span class="famb">yesterday &middot; last week/month/year &middot; in 2019 &middot; at 6pm &middot; on Monday &middot; when I was young &middot; ago</span></div></div><p>These typically go with <strong>present perfect</strong>:</p><div class="formula"><div><span class="fok">ever &middot; never &middot; already &middot; yet &middot; just &middot; today &middot; this week &middot; this year &middot; recently &middot; since &middot; for (duration)</span></div></div><div class="tr-note"><span>&#127481;&#127479;</span><span>Zaman belirtilmi&#351;se (d&uuml;n, ge&ccedil;en hafta, 2020'de) &rarr; Past Simple. Zaman belirsizse ya da &351;imdiyle bağlantysa &rarr; Present Perfect.</span></div></div><div class="pair-grid"><div><div class="pair-lbl">&#10007; Wrong</div><div class="pair-wrong">I have seen her yesterday at the market.</div></div><div><div class="pair-lbl">&#10003; Correct</div><div class="pair-right">I saw her yesterday at the market.</div></div></div><div class="pair-grid"><div><div class="pair-lbl">&#10007; Wrong</div><div class="pair-wrong">Did you ever visit Rome? / Have you visited Rome last year?</div></div><div><div class="pair-lbl">&#10003; Correct</div><div class="pair-right">Have you ever visited Rome? / Did you visit Rome last year?</div></div></div><button class="main-btn" style="background:linear-gradient(135deg,var(--terra),var(--warm));" onclick="done(1)">Exercises &rarr;</button></div>
+</div><div class="block" id="s2">
+  <div class="block-top" onclick="tog(2)">
+    <div class="b-ico" style="background:var(--warm-dim);">&#9999;&#65039;</div>
+    <div class="b-meta"><h2>Exercise 1 &mdash; Fill in the Gap</h2><p>PP or PS? No verb given.</p></div>
+    <span class="b-tag">8 min</span>
+    <span class="b-chev" id="ch2">▼</span>
+  </div>
+  <div class="block-body" id="b2"><div class="ex-hdr"><span class="ex-badge">Exercise 1</span> Complete with the correct tense. No verb is supplied &mdash; use context to determine both the verb and the tense.</div><div class="instr">Some sentences require past simple, some present perfect. Identify the time expression first.</div><div class="fi-row"><span class="fi-n">1</span><span>I</span><input class="fi-inp" id="f1" style="min-width:130px;" autocomplete="off" autocorrect="off" autocapitalize="off"><span>why people insist on arriving early to events that never start on time. It makes no sense to me.</span><button class="chk" onclick="cf('f1','have never understood')">✓</button></div><div class="fi-row"><span class="fi-n">2</span><span>She</span><input class="fi-inp" id="f2" style="min-width:130px;" autocomplete="off" autocorrect="off" autocapitalize="off"><span>to the same conference last October and said it was the best professional event she had attended in years.</span><button class="chk" onclick="cf('f2','went')">✓</button></div><div class="fi-row"><span class="fi-n">3</span><span>The company</span><input class="fi-inp" id="f3" style="min-width:130px;" autocomplete="off" autocorrect="off" autocapitalize="off"><span>a major restructuring that will affect nearly every department across both sites.</span><button class="chk" onclick="cf('f3','has just announced')">✓</button></div><div class="fi-row"><span class="fi-n">4</span><span>He</span><input class="fi-inp" id="f4" style="min-width:130px;" autocomplete="off" autocorrect="off" autocapitalize="off"><span>the firm in 2019, just six months before the pandemic, which he still considers remarkably good timing.</span><button class="chk" onclick="cf('f4','left')">✓</button></div><div class="fi-row"><span class="fi-n">5</span><span>I</span><input class="fi-inp" id="f5" style="min-width:130px;" autocomplete="off" autocorrect="off" autocapitalize="off"><span>anything from them yet, which is beginning to make me think the decision has already been made.</span><button class="chk" onclick="cf('f5','haven't heard')">✓</button></div><div class="fi-row"><span class="fi-n">6</span><span>They</span><input class="fi-inp" id="f6" style="min-width:130px;" autocomplete="off" autocorrect="off" autocapitalize="off"><span>at a colleague's leaving party three years ago and have been working together ever since.</span><button class="chk" onclick="cf('f6','met')">✓</button></div><div class="fi-row"><span class="fi-n">7</span><span>She</span><input class="fi-inp" id="f7" style="min-width:130px;" autocomplete="off" autocorrect="off" autocapitalize="off"><span>three applications this month without receiving a single acknowledgement.</span><button class="chk" onclick="cf('f7','has already submitted')">✓</button></div><div class="fi-row"><span class="fi-n">8</span><span>We</span><input class="fi-inp" id="f8" style="min-width:130px;" autocomplete="off" autocorrect="off" autocapitalize="off"><span>in a meeting when the news broke, so we only found out about it an hour after everyone else.</span><button class="chk" onclick="cf('f8','were')">✓</button></div><button class="main-btn" style="background:linear-gradient(135deg,var(--terra),var(--warm));" onclick="chkEx1()">&#11088; Check All</button><div class="score-card" id="sc1"></div></div>
+</div><div class="block" id="s3">
+  <div class="block-top" onclick="tog(3)">
+    <div class="b-ico" style="background:var(--sky-dim);">&#127919;</div>
+    <div class="b-meta"><h2>Exercise 2 &mdash; Multiple Choice</h2><p>All four options are grammatically possible &mdash; only one is contextually correct</p></div>
+    <span class="b-tag">7 min</span>
+    <span class="b-chev" id="ch3">▼</span>
+  </div>
+  <div class="block-body" id="b3"><div class="ex-hdr"><span class="ex-badge">Exercise 2</span> Read the full sentence carefully before choosing.</div><div class="mc-block" id="mc1"><div class="mc-q">1. &ldquo;______ you ever ______ in a country where you did not speak the language at all?&rdquo;</div><div class="mc-opts"><button class="mc-btn" data-val="Have / lived" onclick="smc('mc1',this,'Have / lived','Have / lived','"Ever" signals present perfect. Past participle of "live" = "lived".')">Have / lived</button><button class="mc-btn" data-val="Did / live" onclick="smc('mc1',this,'Did / live','Have / lived','"Ever" signals present perfect. Past participle of "live" = "lived".')">Did / live</button><button class="mc-btn" data-val="Have / live" onclick="smc('mc1',this,'Have / live','Have / lived','"Ever" signals present perfect. Past participle of "live" = "lived".')">Have / live</button><button class="mc-btn" data-val="Did / lived" onclick="smc('mc1',this,'Did / lived','Have / lived','"Ever" signals present perfect. Past participle of "live" = "lived".')">Did / lived</button></div><div class="mc-fb" id="f-mc1"></div></div><div class="mc-block" id="mc2"><div class="mc-q">2. &ldquo;When she ______ the office last night, the cleaner was still working.&rdquo;</div><div class="mc-opts"><button class="mc-btn" data-val="left" onclick="smc('mc2',this,'left','left','Specific past narrative with "when" &mdash; past simple. Present perfect wrong here.')">left</button><button class="mc-btn" data-val="has left" onclick="smc('mc2',this,'has left','left','Specific past narrative with "when" &mdash; past simple. Present perfect wrong here.')">has left</button><button class="mc-btn" data-val="was leaving" onclick="smc('mc2',this,'was leaving','left','Specific past narrative with "when" &mdash; past simple. Present perfect wrong here.')">was leaving</button><button class="mc-btn" data-val="had left" onclick="smc('mc2',this,'had left','left','Specific past narrative with "when" &mdash; past simple. Present perfect wrong here.')">had left</button></div><div class="mc-fb" id="f-mc2"></div></div><div class="mc-block" id="mc3"><div class="mc-q">3. &ldquo;This is the most interesting book I ______ in a very long time.&rdquo;</div><div class="mc-opts"><button class="mc-btn" data-val="&apos;ve read" onclick="smc('mc3',this,'&apos;ve read','&apos;ve read','Superlative + present perfect is a fixed pattern: 'the most... I've ever...'.')">'ve read</button><button class="mc-btn" data-val="read" onclick="smc('mc3',this,'read','&apos;ve read','Superlative + present perfect is a fixed pattern: 'the most... I've ever...'.')">read</button><button class="mc-btn" data-val="have been reading" onclick="smc('mc3',this,'have been reading','&apos;ve read','Superlative + present perfect is a fixed pattern: 'the most... I've ever...'.')">have been reading</button><button class="mc-btn" data-val="had read" onclick="smc('mc3',this,'had read','&apos;ve read','Superlative + present perfect is a fixed pattern: 'the most... I've ever...'.')">had read</button></div><div class="mc-fb" id="f-mc3"></div></div><div class="mc-block" id="mc4"><div class="mc-q">4. &ldquo;She ______ in four different countries before finally settling here a decade ago.&rdquo;</div><div class="mc-opts"><button class="mc-btn" data-val="lived" onclick="smc('mc4',this,'lived','lived','"Before settling... a decade ago" &mdash; both actions are in the finished past. Past simple or past perfect. Simple is most natural here.')">lived</button><button class="mc-btn" data-val="has lived" onclick="smc('mc4',this,'has lived','lived','"Before settling... a decade ago" &mdash; both actions are in the finished past. Past simple or past perfect. Simple is most natural here.')">has lived</button><button class="mc-btn" data-val="'d lived" onclick="smc('mc4',this,''d lived','lived','"Before settling... a decade ago" &mdash; both actions are in the finished past. Past simple or past perfect. Simple is most natural here.')">'d lived</button><button class="mc-btn" data-val="was living" onclick="smc('mc4',this,'was living','lived','"Before settling... a decade ago" &mdash; both actions are in the finished past. Past simple or past perfect. Simple is most natural here.')">was living</button></div><div class="mc-fb" id="f-mc4"></div></div><div class="mc-block" id="mc5"><div class="mc-q">5. &ldquo;How long ______ you ______ at your current position?&rdquo;</div><div class="mc-opts"><button class="mc-btn" data-val="have / been" onclick="smc('mc5',this,'have / been','have / been','"How long" with an ongoing situation &rarr; present perfect. "Have you been" with stative meaning.')">have / been</button><button class="mc-btn" data-val="did / be" onclick="smc('mc5',this,'did / be','have / been','"How long" with an ongoing situation &rarr; present perfect. "Have you been" with stative meaning.')">did / be</button><button class="mc-btn" data-val="are / being" onclick="smc('mc5',this,'are / being','have / been','"How long" with an ongoing situation &rarr; present perfect. "Have you been" with stative meaning.')">are / being</button><button class="mc-btn" data-val="were / being" onclick="smc('mc5',this,'were / being','have / been','"How long" with an ongoing situation &rarr; present perfect. "Have you been" with stative meaning.')">were / being</button></div><div class="mc-fb" id="f-mc5"></div></div></div>
+</div><div class="block" id="s4">
+  <div class="block-top" onclick="tog(4)">
+    <div class="b-ico" style="background:var(--terra-dim);">&#9888;&#65039;</div>
+    <div class="b-meta"><h2>Exercise 3 &mdash; Error Correction</h2><p>Tense errors only &mdash; no markers given</p></div>
+    <span class="b-tag">7 min</span>
+    <span class="b-chev" id="ch4">▼</span>
+  </div>
+  <div class="block-body" id="b4"><div class="ex-hdr"><span class="ex-badge">Exercise 3</span> Each sentence contains a tense error. Find it and rewrite the complete sentence.</div><div class="ec-block"><div class="ec-n">Sentence 1</div><div class="ec-sentence">I have seen her last Tuesday, but she seemed distracted and didn't say much about how things were going.</div><div class="ec-task">Find the error and write the corrected sentence in full.</div><input class="ec-inp" id="ec1" autocomplete="off" placeholder="Write the full corrected sentence..."><button class="chk" style="margin-top:7px;" onclick="cec('ec1','saw')">✓</button></div><div class="ec-block"><div class="ec-n">Sentence 2</div><div class="ec-sentence">Did you ever consider a completely different career path, or have you always worked in this field?</div><div class="ec-task">Find the error and write the corrected sentence in full.</div><input class="ec-inp" id="ec2" autocomplete="off" placeholder="Write the full corrected sentence..."><button class="chk" style="margin-top:7px;" onclick="cec('ec2','Have you ever considered')">✓</button></div><div class="ec-block"><div class="ec-n">Sentence 3</div><div class="ec-sentence">She has started the new job in March, which was six months after she handed in her notice at the previous company.</div><div class="ec-task">Find the error and write the corrected sentence in full.</div><input class="ec-inp" id="ec3" autocomplete="off" placeholder="Write the full corrected sentence..."><button class="chk" style="margin-top:7px;" onclick="cec('ec3','started')">✓</button></div><div class="ec-block"><div class="ec-n">Sentence 4</div><div class="ec-sentence">He works in the same department for eleven years now, which is longer than any other current employee.</div><div class="ec-task">Find the error and write the corrected sentence in full.</div><input class="ec-inp" id="ec4" autocomplete="off" placeholder="Write the full corrected sentence..."><button class="chk" style="margin-top:7px;" onclick="cec('ec4','has worked')">✓</button></div><div class="ec-block"><div class="ec-n">Sentence 5</div><div class="ec-sentence">I didn't hear anything from them yet, despite the fact that the deadline was supposed to be last Friday.</div><div class="ec-task">Find the error and write the corrected sentence in full.</div><input class="ec-inp" id="ec5" autocomplete="off" placeholder="Write the full corrected sentence..."><button class="chk" style="margin-top:7px;" onclick="cec('ec5','haven't heard')">✓</button></div></div>
+</div><div class="block" id="s5">
+  <div class="block-top" onclick="tog(5)">
+    <div class="b-ico" style="background:var(--sage-dim);">&#9997;&#65039;</div>
+    <div class="b-meta"><h2>Exercise 4 &mdash; Extended Writing</h2><p>Both tenses, one paragraph</p></div>
+    <span class="b-tag">8 min</span>
+    <span class="b-chev" id="ch5">▼</span>
+  </div>
+  <div class="block-body" id="b5"><div class="ex-hdr"><span class="ex-badge">Exercise 4</span> Free writing.</div><div class="write-task"><h4>Two Perspectives on the Same Story</h4><p>Write 7-8 sentences about something that happened in the past that still has some relevance or consequence today. Use both present perfect (for the ongoing relevance) and past simple (for the specific events). The challenge is to move naturally between the two without making it feel like an exercise. Write in continuous prose.</p></div><div class="write-lines"><input class="write-line" placeholder="" autocomplete="off">
+<input class="write-line" placeholder="" autocomplete="off">
+<input class="write-line" placeholder="" autocomplete="off">
+<input class="write-line" placeholder="" autocomplete="off">
+<input class="write-line" placeholder="" autocomplete="off">
+<input class="write-line" placeholder="" autocomplete="off">
+<input class="write-line" placeholder="" autocomplete="off">
+<input class="write-line" placeholder="" autocomplete="off">
+</div><div class="callout"><strong>Self-check:</strong> Have you used at least three examples of each tense? Is the switch between them logical? Have you avoided PP with specific time markers?</div><button class="main-btn" style="background:linear-gradient(135deg,var(--terra),var(--warm));" onclick="finishLesson()">&#127942; Complete Lesson 4</button><div class="score-card" id="finalSc"></div></div>
+</div>
+<div class="lesson-nav">
+  <button class="nav-btn" onclick="alert('Open Lesson 3')">← Lesson 3</button>
+  <div class="nav-info">Tuba · B1+ · Phase 1<br><span style="color:var(--terra);">Lesson 5 → Will vs Going To</span></div>
+  <button class="nav-btn next" onclick="alert('Open Lesson 5')">Lesson 5 →</button>
+</div>
+</div>
+<div id="save-toast">✓ Saved</div>
+<div class="save-bar">
+  <button class="save-btn reset" onclick="clearProgress()">Reset</button>
+  <button class="save-btn" onclick="saveProgress()">Save</button>
+</div>
+<script>
+const comp=new Array(6).fill(false);
+function upd(){const d=comp.filter(Boolean).length;const s=document.getElementById('steps').children;for(let i=0;i<s.length;i++){s[i].classList.remove('done','active');if(i<d)s[i].classList.add('done');else if(i===d)s[i].classList.add('active');}document.getElementById('pct').textContent=Math.round(d/comp.length*100)+'%';}
+function tog(i){const b=document.getElementById('b'+i);const c=document.getElementById('ch'+i);if(!b)return;b.classList.toggle('open');if(b.classList.contains('open')){b.style.maxHeight='4000px';b.style.padding='16px 17px 20px';if(c)c.style.transform='rotate(180deg)';}else{b.style.maxHeight='0';b.style.padding='0 17px';if(c)c.style.transform='';}}
+function done(i){comp[i]=true;upd();const ni='b'+(i+1);const nb=document.getElementById(ni);if(nb&&!nb.classList.contains('open')){nb.classList.add('open');nb.style.maxHeight='4000px';nb.style.padding='16px 17px 20px';const nc=document.getElementById('ch'+(i+1));if(nc)nc.style.transform='rotate(180deg)';document.getElementById('s'+(i+1))?.scrollIntoView({behavior:'smooth',block:'start'});}}
+function cf(id,a,b2){const el=document.getElementById(id);if(!el)return;const v=el.value.trim().toLowerCase();const ok=v===a||(b2&&v===b2);el.classList.toggle('ok',ok);el.classList.toggle('no',!ok);}
+function cec(id,kw){const el=document.getElementById(id);if(!el)return;const v=el.value.trim().toLowerCase();const ok=v.includes(kw.toLowerCase());el.classList.toggle('ok',ok);el.classList.toggle('no',!ok);}
+function smc(pid,btn,val,correct,fb_txt){const par=document.getElementById(pid);par.querySelectorAll('.mc-btn').forEach(b=>b.classList.remove('cor','wrng'));const ok=val===correct;btn.classList.add(ok?'cor':'wrng');if(!ok)par.querySelectorAll('.mc-btn').forEach(b=>{if(b.dataset.val===correct)b.classList.add('cor');});const fb=document.getElementById('f-'+pid);fb.textContent=ok?'✓ Correct. '+(fb_txt||''):'✗ Not quite. '+(fb_txt||'');fb.className='mc-fb show '+(ok?'ok':'no');}
+function showSc(id,got,total,bg){const el=document.getElementById(id);if(!el)return;const p=Math.round(got/total*100);el.style.background=bg||'linear-gradient(135deg,var(--terra),var(--warm))';el.innerHTML='<div class="sc-n">'+got+'<span>/'+total+'</span></div><div class="sc-t">'+(p>=80?'Strong work!':p>=60?'Good effort.':'Review needed.')+'</div><p class="sc-b">'+(p>=80?'Solid B1+ performance.':'Go back and check the red answers carefully.')+'</p>';el.classList.add('show');el.scrollIntoView({behavior:'smooth',block:'nearest'});}
+const LS_KEY='tuba_b1p_lesson4';
+function saveProgress(){const s={comp:comp,inputs:{}};document.querySelectorAll('input[id],textarea[id]').forEach(e=>{s.inputs[e.id]=e.value;});try{localStorage.setItem(LS_KEY,JSON.stringify(s));showSaveToast();}catch(e){}}
+function loadProgress(){try{const r=localStorage.getItem(LS_KEY);if(!r)return;const s=JSON.parse(r);if(s.comp){s.comp.forEach((v,i)=>{comp[i]=v;});upd();comp.forEach((v,i)=>{if(v){const b=document.getElementById('b'+i);const c=document.getElementById('ch'+i);if(b&&!b.classList.contains('open')){b.classList.add('open');b.style.maxHeight='4000px';b.style.padding='16px 17px 20px';if(c)c.style.transform='rotate(180deg)';}}}); }if(s.inputs){Object.entries(s.inputs).forEach(([id,val])=>{const el=document.getElementById(id);if(el)el.value=val;});}}catch(e){}}
+function clearProgress(){if(confirm('Clear all saved progress for this lesson?')){localStorage.removeItem(LS_KEY);location.reload();}}
+function showSaveToast(){const t=document.getElementById('save-toast');if(!t)return;t.style.opacity='1';t.style.transform='translateY(0)';setTimeout(()=>{t.style.opacity='0';t.style.transform='translateY(8px)';},2000);}
+document.addEventListener('input',()=>saveProgress());
+document.addEventListener('DOMContentLoaded',()=>{const b=document.getElementById('b0');if(b){b.style.maxHeight='4000px';b.style.padding='16px 17px 20px';}const c=document.getElementById('ch0');if(c)c.style.transform='rotate(180deg)';loadProgress();});
+
+function chkEx1(){
+  const a={f1:'have never understood',f2:'went',f3:'has just announced',f4:'left',f5:"haven't heard",f6:'met',f7:'has already submitted',f8:'were'};
+  let ok=0;Object.entries(a).forEach(([id,v])=>{cec(id,v);if(document.getElementById(id)?.classList.contains('ok'))ok++;});
+  comp[2]=ok>=6;upd();showSc('sc1',ok,8);done(2);
+}
+function finishLesson(){comp[5]=true;upd();const sc=document.getElementById('finalSc');sc.style.background='linear-gradient(135deg,var(--terra),var(--warm))';sc.innerHTML='<div class="sc-n">&#10003;</div><div class="sc-t">Lesson 4 Complete</div><p class="sc-b">PP vs Past Simple mastered. Lesson 5: Will vs Going To.</p>';sc.classList.add('show');sc.scrollIntoView({behavior:"smooth"});}
+</script>
+</body>
+</html>
