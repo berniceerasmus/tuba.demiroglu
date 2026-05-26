@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tuba B1+ · HW12 — Stative Verbs & Time Clues (Full Practice)</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fdf8f4;--surface:#fff;--surface2:#fdf0e8;--border:#e8d5c4;--border2:#d4b99e;--terra:#c1440e;--terra-dim:rgba(193,68,14,0.1);--warm:#e07b39;--warm-dim:rgba(224,123,57,0.12);--sage:#5f7c5e;--sage-dim:rgba(95,124,94,0.1);--sky:#4a7fa5;--sky-dim:rgba(74,127,165,0.1);--amber:#c4862a;--amber-dim:rgba(196,134,42,0.12);--red:#c0392b;--red-dim:rgba(192,57,43,0.1);--green:#4a7c59;--green-dim:rgba(74,124,89,0.1);--violet:#7c5c9e;--violet-dim:rgba(124,92,158,0.1);--text:#2c1a0e;--muted:#7a5c44;--muted2:#b8967a;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);line-height:1.75;}
+body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(circle,rgba(193,68,14,0.04) 1px,transparent 1px);background-size:36px 36px;pointer-events:none;z-index:0;}
+.page{max-width:800px;margin:0 auto;padding:36px 18px 100px;position:relative;z-index:1;}
+.hw-hdr{border-radius:18px;padding:22px 24px 26px;margin-bottom:18px;}
+.hw-hdr h1{font-family:'Playfair Display',serif;font-size:clamp(20px,4.5vw,30px);font-style:italic;color:#fff;margin-bottom:5px;}
+.hw-hdr p{font-size:13px;color:rgba(255,255,255,.88);font-weight:600;margin-bottom:12px;}
+.hw-meta{display:flex;gap:6px;flex-wrap:wrap;}
+.hw-meta span{background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.3);border-radius:50px;padding:2px 10px;font-size:10px;font-weight:700;color:#fff;}
+/* Reference accordion */
+.ref-block{background:var(--surface);border:2px solid var(--border);border-radius:14px;margin-bottom:18px;overflow:hidden;}
+.ref-top{display:flex;align-items:center;gap:10px;padding:12px 16px;cursor:pointer;user-select:none;}
+.ref-top:hover{background:var(--surface2);}
+.ref-ico{width:36px;height:36px;background:var(--terra-dim);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.ref-meta{flex:1;}
+.ref-meta h2{font-size:13px;font-weight:800;color:var(--text);}
+.ref-meta p{font-size:11px;font-weight:600;color:var(--muted);}
+.ref-chev{color:var(--muted);font-size:11px;transition:transform 0.25s;flex-shrink:0;}
+.ref-body{padding:0 16px;max-height:0;overflow:hidden;transition:max-height 0.45s ease,padding 0.3s;}
+.ref-body.open{max-height:5000px;padding:14px 16px 20px;}
+/* Grammar boxes */
+.gram{border-left:3px solid var(--terra);padding:11px 14px;margin-bottom:10px;background:var(--terra-dim);border-radius:0 10px 10px 0;}
+.gram h3{font-size:11px;font-weight:800;color:var(--terra);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.06em;}
+.gram p{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:6px;}
+.gram-sage{border-left:3px solid var(--sage);padding:11px 14px;margin-bottom:10px;background:var(--sage-dim);border-radius:0 10px 10px 0;}
+.gram-sage h3{font-size:11px;font-weight:800;color:var(--sage);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.06em;}
+.gram-sage p{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:6px;}
+.gram-warm{border-left:3px solid var(--warm);padding:11px 14px;margin-bottom:10px;background:var(--warm-dim);border-radius:0 10px 10px 0;}
+.gram-warm h3{font-size:11px;font-weight:800;color:var(--warm);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.06em;}
+.gram-warm p{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:6px;}
+.gram-violet{border-left:3px solid var(--violet);padding:11px 14px;margin-bottom:10px;background:var(--violet-dim);border-radius:0 10px 10px 0;}
+.gram-violet h3{font-size:11px;font-weight:800;color:var(--violet);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.06em;}
+.gram-violet p{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:6px;}
+.formula{background:var(--surface);border:1.5px solid var(--border);border-radius:9px;padding:10px 13px;margin-bottom:9px;font-size:13px;font-weight:700;line-height:2.1;}
+.fok{color:var(--green);}
+.ferr{color:var(--red);}
+.cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:10px;}
+@media(max-width:540px){.cat-grid{grid-template-columns:1fr;}}
+.cat-card{background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:9px 12px;}
+.cat-lbl{font-size:9px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;}
+.cat-words{font-size:12px;font-weight:700;color:var(--text);line-height:1.6;}
+.dual-table{width:100%;border-collapse:collapse;font-size:12.5px;margin-bottom:10px;}
+.dual-table th{text-align:left;font-size:10px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;padding:4px 8px;border-bottom:2px solid var(--border);}
+.dual-table td{padding:7px 8px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.dual-table tr:last-child td{border-bottom:none;}
+.stative-col{color:var(--green);font-weight:700;}
+.dynamic-col{color:var(--sky);font-weight:700;}
+.tr-note{background:var(--amber-dim);border:1.5px solid var(--amber);border-radius:8px;padding:6px 11px;font-size:11.5px;font-weight:700;color:#7a4a0a;margin-top:7px;display:flex;gap:7px;margin-bottom:10px;}
+.time-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:10px;}
+@media(max-width:480px){.time-grid{grid-template-columns:1fr;}}
+.time-card{border-radius:10px;padding:10px 12px;}
+.time-card.sim{background:var(--sage-dim);border:1.5px solid rgba(95,124,94,0.3);}
+.time-card.cont{background:var(--sky-dim);border:1.5px solid rgba(74,127,165,0.3);}
+.time-card h4{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:5px;}
+.time-card.sim h4{color:var(--sage);}
+.time-card.cont h4{color:var(--sky);}
+.time-card ul{list-style:none;font-size:12px;font-weight:700;color:var(--text);line-height:1.8;}
+/* Parts */
+.part{background:var(--surface);border:2px solid var(--border);border-radius:14px;margin-bottom:10px;overflow:hidden;}
+.part-top{display:flex;align-items:center;gap:9px;padding:11px 15px;border-bottom:2px dashed var(--border);}
+.p-badge{font-size:10px;font-weight:800;padding:3px 11px;border-radius:50px;color:#fff;}
+.part-top h2{font-size:13px;font-weight:800;color:var(--text);flex:1;}
+.pts{font-size:11px;font-weight:800;color:var(--muted);}
+.part-body{padding:13px 15px 17px;}
+.instr{font-size:12.5px;color:var(--muted);margin-bottom:10px;line-height:1.65;padding:7px 11px;background:var(--surface2);border-left:3px solid var(--border);border-radius:0 8px 8px 0;}
+/* Fill-in */
+.fi-row{display:flex;flex-wrap:wrap;align-items:center;gap:5px;padding:9px 12px;background:var(--surface2);border:2px solid var(--border);border-radius:11px;margin-bottom:6px;font-size:13px;font-weight:600;line-height:1.9;}
+.fi-n{font-size:10px;font-weight:800;color:var(--muted2);min-width:20px;}
+.fi-inp{display:inline-block;min-width:130px;padding:2px 7px;border:none;border-bottom:2px solid var(--border);background:transparent;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;color:var(--text);outline:none;transition:border-color 0.2s;vertical-align:middle;}
+.fi-inp:focus{border-bottom-color:var(--terra);}
+.fi-inp.ok{border-bottom-color:var(--green);color:var(--green);}
+.fi-inp.no{border-bottom-color:var(--red);color:var(--red);}
+.chk{padding:3px 10px;background:var(--terra);color:#fff;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:10px;font-weight:800;cursor:pointer;vertical-align:middle;margin-left:2px;}
+.chk:hover{background:var(--warm);}
+/* MC */
+.mc-block{background:var(--surface2);border:2px solid var(--border);border-radius:11px;padding:11px 13px;margin-bottom:7px;}
+.mc-q{font-size:13px;font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.55;}
+.mc-opts{display:flex;gap:6px;flex-wrap:wrap;}
+.mc-btn{padding:5px 13px;border:2px solid var(--border);border-radius:50px;background:var(--surface);font-family:'Nunito',sans-serif;font-size:12px;font-weight:700;color:var(--muted);cursor:pointer;transition:all 0.15s;}
+.mc-btn:hover{border-color:var(--terra);color:var(--terra);}
+.mc-btn.cor{background:var(--green-dim);border-color:var(--green);color:var(--green);}
+.mc-btn.wrng{background:var(--red-dim);border-color:var(--red);color:var(--red);}
+.mc-fb{font-size:11px;font-weight:700;margin-top:6px;padding:4px 9px;border-radius:7px;display:none;}
+.mc-fb.show{display:block;}
+.mc-fb.ok{background:var(--green-dim);color:var(--green);}
+.mc-fb.no{background:var(--red-dim);color:var(--red);}
+/* Error correction */
+.ec-block{background:var(--surface2);border:2px solid var(--border);border-radius:11px;padding:11px 13px;margin-bottom:7px;}
+.ec-n{font-size:10px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+.ec-wrong{background:var(--red-dim);border:1.5px solid rgba(192,57,43,0.25);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:7px 11px;font-size:13px;font-weight:700;color:#7a1a0e;margin-bottom:7px;}
+.ec-wrong .err{text-decoration:line-through;opacity:0.55;}
+.ec-inp{width:100%;border:2px solid var(--border);border-radius:9px;padding:7px 11px;font-family:'Nunito',sans-serif;font-size:13px;font-weight:600;color:var(--text);outline:none;background:var(--surface);}
+.ec-inp:focus{border-color:var(--terra);}
+/* Sentence transformation */
+.tr-block{background:var(--surface2);border:2px solid var(--border);border-radius:11px;padding:11px 13px;margin-bottom:7px;}
+.tr-orig{font-size:13px;font-weight:700;color:var(--text);margin-bottom:6px;line-height:1.55;}
+.tr-hint{font-size:11px;font-weight:700;color:var(--muted);background:var(--warm-dim);border-radius:6px;padding:3px 9px;display:inline-block;margin-bottom:7px;}
+.tr-inp{width:100%;border:2px solid var(--border);border-radius:9px;padding:7px 11px;font-family:'Nunito',sans-serif;font-size:13px;font-weight:600;color:var(--text);outline:none;background:var(--surface);}
+.tr-inp:focus{border-color:var(--terra);}
+/* T/F/NG */
+.tf-block{background:var(--surface2);border:2px solid var(--border);border-radius:11px;padding:11px 13px;margin-bottom:7px;}
+.tf-stmt{font-size:13px;font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.55;}
+.tf-opts{display:flex;gap:6px;flex-wrap:wrap;}
+.tf-btn{padding:5px 14px;border:2px solid var(--border);border-radius:50px;background:var(--surface);font-family:'Nunito',sans-serif;font-size:12px;font-weight:700;color:var(--muted);cursor:pointer;transition:all 0.15s;}
+.tf-btn:hover{border-color:var(--terra);color:var(--terra);}
+.tf-btn.cor{background:var(--green-dim);border-color:var(--green);color:var(--green);}
+.tf-btn.wrng{background:var(--red-dim);border-color:var(--red);color:var(--red);}
+.tf-fb{font-size:11px;font-weight:700;margin-top:6px;padding:4px 9px;border-radius:7px;display:none;}
+.tf-fb.show{display:block;}
+.tf-fb.ok{background:var(--green-dim);color:var(--green);}
+.tf-fb.no{background:var(--red-dim);color:var(--red);}
+/* Writing */
+.wl{display:flex;align-items:flex-start;gap:8px;margin-bottom:7px;}
+.wl-n{width:22px;height:22px;background:var(--terra);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;margin-top:4px;}
+.wl-inp{flex:1;border:none;border-bottom:2px solid var(--border);background:transparent;font-family:'Nunito',sans-serif;font-size:13px;font-weight:600;color:var(--text);outline:none;padding:3px 5px;}
+.wl-inp:focus{border-bottom-color:var(--terra);}
+.writing-checklist{background:var(--violet-dim);border:1.5px solid rgba(124,92,158,0.25);border-radius:10px;padding:10px 13px;margin-bottom:10px;font-size:12px;font-weight:700;color:var(--text);}
+.writing-checklist h4{font-size:10px;font-weight:800;color:var(--violet);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;}
+.writing-checklist li{line-height:1.9;list-style:none;padding-left:0;}
+.writing-checklist li::before{content:"☐ ";color:var(--violet);}
+/* Buttons & score */
+.main-btn{width:100%;padding:11px;background:linear-gradient(135deg,var(--terra),var(--warm));color:#fff;border:none;border-radius:12px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:800;cursor:pointer;margin-top:10px;box-shadow:0 4px 14px rgba(193,68,14,0.22);transition:transform 0.15s,opacity 0.15s;}
+.main-btn:hover{transform:translateY(-1px);opacity:0.9;}
+.score-card{border-radius:14px;padding:18px 20px;text-align:center;display:none;margin-top:10px;}
+.score-card.show{display:block;}
+.sc-n{font-size:44px;font-weight:900;color:#fff;line-height:1;}
+.sc-n span{font-size:16px;}
+.sc-t{font-family:'Playfair Display',serif;font-size:20px;font-style:italic;color:#fff;margin:5px 0 3px;}
+.sc-b{font-size:12px;color:rgba(255,255,255,0.88);font-weight:600;}
+.save-bar{position:fixed;bottom:18px;right:18px;display:flex;gap:7px;z-index:999;}
+.save-btn{padding:7px 13px;background:var(--terra);color:#fff;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:10px;font-weight:800;cursor:pointer;box-shadow:0 3px 10px rgba(193,68,14,0.3);transition:opacity 0.15s;}
+.save-btn:hover{opacity:0.85;}
+.save-btn.reset{background:var(--surface);border:2px solid var(--border);color:var(--muted);}
+#save-toast{position:fixed;bottom:55px;right:18px;background:var(--terra);color:#fff;font-family:'Nunito',sans-serif;font-size:10px;font-weight:800;padding:6px 14px;border-radius:50px;opacity:0;transform:translateY(8px);transition:all 0.3s;pointer-events:none;z-index:1000;}
+.passage-box{background:var(--surface);border:2px solid var(--border);border-radius:11px;padding:13px 15px;margin-bottom:12px;font-size:13px;font-weight:600;line-height:1.85;color:var(--text);}
+.passage-box p{margin-bottom:6px;}
+.passage-box p:last-child{margin-bottom:0;}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- Header -->
+<div class="hw-hdr" style="background:linear-gradient(135deg,var(--terra),var(--warm));">
+  <div style="display:inline-block;background:rgba(255,255,255,0.28);border:1.5px solid rgba(255,255,255,0.4);border-radius:50px;padding:3px 13px;font-size:10px;font-weight:800;color:#fff;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">Homework 12 — Full Practice</div>
+  <h1>Stative Verbs & Time Clues</h1>
+  <p>Never use continuous with stative verbs · Time expressions guide tense choice</p>
+  <div class="hw-meta"><span>Homework 12</span><span>30–35 min</span><span>6 activities</span><span>Grammar</span><span>Tenses</span></div>
+</div>
+
+<!-- Grammar Reference Accordion -->
+<div class="ref-block">
+  <div class="ref-top" onclick="togRef()">
+    <div class="ref-ico">📖</div>
+    <div class="ref-meta">
+      <h2>Grammar Reference — Stative &amp; Dynamic Verbs</h2>
+      <p>Tap to open · Read before starting the exercises</p>
+    </div>
+    <span class="ref-chev" id="refChev">▼</span>
+  </div>
+  <div class="ref-body" id="refBody">
+    <div class="gram">
+      <h3>What are stative verbs?</h3>
+      <p>Stative (non-action) verbs describe a <strong>state or condition</strong> — not an action. Because states have no real beginning or end, stative verbs are used only in <strong>simple</strong> tenses — <em>never</em> in continuous forms.</p>
+    </div>
+    <div class="formula">
+      <span class="ferr">✗ I am knowing the answer.</span><br>
+      <span class="fok">✓ I know the answer.</span><br>
+      <span class="ferr">✗ She is loving Istanbul.</span><br>
+      <span class="fok">✓ She loves Istanbul.</span>
+    </div>
+    <div class="tr-note">🇹🇷 <span>Turkish uses <em>seviyorum</em> (present continuous) for love — but English uses simple: <strong>I love Istanbul.</strong> NOT <em>I am loving Istanbul.</em></span></div>
+    <div class="gram-sage">
+      <h3>4 categories of stative verbs</h3>
+      <p>These are the four main groups. Learn one group at a time.</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card"><div class="cat-lbl">💼 Possession &amp; size</div><div class="cat-words">belong, own, have*, possess, weigh, measure</div></div>
+      <div class="cat-card"><div class="cat-lbl">💭 Opinion &amp; thought</div><div class="cat-words">know, believe, agree, think*, imagine, understand</div></div>
+      <div class="cat-card"><div class="cat-lbl">❤️ Likes, dislikes &amp; feelings</div><div class="cat-words">like, love, hate, want, need, wish, prefer, dislike</div></div>
+      <div class="cat-card"><div class="cat-lbl">👁 Perception &amp; senses</div><div class="cat-words">sound, hear, seem, see*, appear, look*, taste*, smell*, feel*</div></div>
+    </div>
+    <p style="font-size:11px;color:var(--muted);font-weight:600;margin-bottom:12px;">* These verbs can sometimes be <em>dynamic</em> — see the dual-use section below.</p>
+    <div class="gram-violet">
+      <h3>Dual-use verbs — stative AND dynamic</h3>
+      <p>Some verbs change meaning depending on whether they describe a state or an action. When they describe an <strong>action</strong>, they CAN be used in continuous.</p>
+    </div>
+    <table class="dual-table">
+      <thead><tr><th>Verb</th><th class="stative-col">Stative meaning (simple)</th><th class="dynamic-col">Dynamic meaning (continuous OK)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>have</strong></td><td class="stative-col">possess → <em>I have two cats.</em></td><td class="dynamic-col">experience → <em>They are having a party.</em></td></tr>
+        <tr><td><strong>be</strong></td><td class="stative-col">exist/describe → <em>James is a doctor.</em></td><td class="dynamic-col">behave → <em>He is being very kind.</em></td></tr>
+        <tr><td><strong>think</strong></td><td class="stative-col">believe → <em>I think it's a good idea.</em></td><td class="dynamic-col">reflect → <em>She is thinking about her trip.</em></td></tr>
+        <tr><td><strong>look</strong></td><td class="stative-col">appear → <em>Tom looks like his sister.</em></td><td class="dynamic-col">focus eyes → <em>Peter is looking out the window.</em></td></tr>
+        <tr><td><strong>taste / smell / feel</strong></td><td class="stative-col">sense → <em>This soup tastes great.</em></td><td class="dynamic-col">test / action → <em>She is tasting the soup.</em></td></tr>
+      </tbody>
+    </table>
+    <div class="gram-warm">
+      <h3>Time expressions — your tense clues</h3>
+      <p>These words tell you which tense to choose.</p>
+    </div>
+    <div class="time-grid">
+      <div class="time-card sim"><h4>🟢 Present Simple</h4><ul><li>always / usually / often</li><li>sometimes / never</li><li>every day / week / morning</li><li>on Mondays / at weekends</li></ul></div>
+      <div class="time-card cont"><h4>🔵 Present Continuous</h4><ul><li>now / right now</li><li>at the moment / currently</li><li>today / this week / this year</li><li>these days</li></ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── PART 1 — True / False / Not Given ── -->
+<div class="part">
+  <div class="part-top">
+    <span class="p-badge" style="background:var(--sky);">Part 1</span>
+    <h2>True, False, or Not Given?</h2>
+    <span class="pts">6 questions</span>
+  </div>
+  <div class="part-body">
+    <div class="instr">Read the passage below, then decide: is each statement <strong>True</strong>, <strong>False</strong>, or <strong>Not Given</strong> (the passage doesn't say)? Click your answer for instant feedback.</div>
+    <div class="passage-box">
+      <p>Maya is a translator. She <strong>knows</strong> four languages fluently and <strong>believes</strong> that language learning never really stops. Right now, she <strong>is working</strong> on a long French document — her client always <strong>wants</strong> fast delivery. These days, Maya <strong>is also trying</strong> to learn Turkish. She <strong>has</strong> a small apartment near the city centre, and every evening she <strong>cooks</strong> something new. Tonight she <strong>is having</strong> dinner with a colleague.</p>
+    </div>
+
+    <div class="tf-block" id="tf1"><div class="tf-stmt">1. Maya speaks four languages.</div><div class="tf-opts"><button class="tf-btn" onclick="stf('tf1',this,'True','True')">True</button><button class="tf-btn" onclick="stf('tf1',this,'False','True')">False</button><button class="tf-btn" onclick="stf('tf1',this,'Not Given','True')">Not Given</button></div><div class="tf-fb" id="f-tf1"></div></div>
+
+    <div class="tf-block" id="tf2"><div class="tf-stmt">2. Maya is currently translating a Spanish document.</div><div class="tf-opts"><button class="tf-btn" onclick="stf('tf2',this,'True','False')">True</button><button class="tf-btn" onclick="stf('tf2',this,'False','False')">False</button><button class="tf-btn" onclick="stf('tf2',this,'Not Given','False')">Not Given</button></div><div class="tf-fb" id="f-tf2"></div></div>
+
+    <div class="tf-block" id="tf3"><div class="tf-stmt">3. Maya's client always wants fast delivery.</div><div class="tf-opts"><button class="tf-btn" onclick="stf('tf3',this,'True','True')">True</button><button class="tf-btn" onclick="stf('tf3',this,'False','True')">False</button><button class="tf-btn" onclick="stf('tf3',this,'Not Given','True')">Not Given</button></div><div class="tf-fb" id="f-tf3"></div></div>
+
+    <div class="tf-block" id="tf4"><div class="tf-stmt">4. Maya is having a Turkish lesson tonight.</div><div class="tf-opts"><button class="tf-btn" onclick="stf('tf4',this,'True','Not Given')">True</button><button class="tf-btn" onclick="stf('tf4',this,'False','Not Given')">False</button><button class="tf-btn" onclick="stf('tf4',this,'Not Given','Not Given')">Not Given</button></div><div class="tf-fb" id="f-tf4"></div></div>
+
+    <div class="tf-block" id="tf5"><div class="tf-stmt">5. Maya owns her apartment.</div><div class="tf-opts"><button class="tf-btn" onclick="stf('tf5',this,'True','Not Given')">True</button><button class="tf-btn" onclick="stf('tf5',this,'False','Not Given')">False</button><button class="tf-btn" onclick="stf('tf5',this,'Not Given','Not Given')">Not Given</button></div><div class="tf-fb" id="f-tf5"></div></div>
+
+    <div class="tf-block" id="tf6"><div class="tf-stmt">6. Tonight, Maya is eating with someone else.</div><div class="tf-opts"><button class="tf-btn" onclick="stf('tf6',this,'True','True')">True</button><button class="tf-btn" onclick="stf('tf6',this,'False','True')">False</button><button class="tf-btn" onclick="stf('tf6',this,'Not Given','True')">Not Given</button></div><div class="tf-fb" id="f-tf6"></div></div>
+  </div>
+</div>
+
+<!-- ── PART 2 — Multiple Choice ── -->
+<div class="part">
+  <div class="part-top">
+    <span class="p-badge" style="background:var(--terra);">Part 2</span>
+    <h2>Multiple Choice — choose the correct form</h2>
+    <span class="pts">8 questions</span>
+  </div>
+  <div class="part-body">
+    <div class="instr">Choose the best answer. Think carefully about stative verbs and time clues. Click your answer for instant feedback.</div>
+
+    <div class="mc-block" id="mc1"><div class="mc-q">1. Every morning, she __ herbal tea. She never drinks coffee.</div><div class="mc-opts"><button class="mc-btn" onclick="smc('mc1',this,'drinks','drinks')">drinks</button><button class="mc-btn" onclick="smc('mc1',this,'is drinking','drinks')">is drinking</button><button class="mc-btn" onclick="smc('mc1',this,'drink','drinks')">drink</button></div><div class="mc-fb" id="f-mc1"></div></div>
+
+    <div class="mc-block" id="mc2"><div class="mc-q">2. Right now, I __ a really interesting novel.</div><div class="mc-opts"><button class="mc-btn" onclick="smc('mc2',this,'read','am reading')">read</button><button class="mc-btn" onclick="smc('mc2',this,'am reading','am reading')">am reading</button><button class="mc-btn" onclick="smc('mc2',this,'reads','am reading')">reads</button></div><div class="mc-fb" id="f-mc2"></div></div>
+
+    <div class="mc-block" id="mc3"><div class="mc-q">3. I __ that grammar is important. (= I believe)</div><div class="mc-opts"><button class="mc-btn" onclick="smc('mc3',this,'am thinking','think')">am thinking</button><button class="mc-btn" onclick="smc('mc3',this,'think','think')">think</button><button class="mc-btn" onclick="smc('mc3',this,'thinks','think')">thinks</button></div><div class="mc-fb" id="f-mc3"></div></div>
+
+    <div class="mc-block" id="mc4"><div class="mc-q">4. She __ about what to say in her presentation right now. (= reflecting)</div><div class="mc-opts"><button class="mc-btn" onclick="smc('mc4',this,'thinks','is thinking')">thinks</button><button class="mc-btn" onclick="smc('mc4',this,'is thinking','is thinking')">is thinking</button><button class="mc-btn" onclick="smc('mc4',this,'think','is thinking')">think</button></div><div class="mc-fb" id="f-mc4"></div></div>
+
+    <div class="mc-block" id="mc5"><div class="mc-q">5. This cake __ amazing! (= sense / perception)</div><div class="mc-opts"><button class="mc-btn" onclick="smc('mc5',this,'is tasting','tastes')">is tasting</button><button class="mc-btn" onclick="smc('mc5',this,'tastes','tastes')">tastes</button><button class="mc-btn" onclick="smc('mc5',this,'taste','tastes')">taste</button></div><div class="mc-fb" id="f-mc5"></div></div>
+
+    <div class="mc-block" id="mc6"><div class="mc-q">6. The chef __ the sauce right now to see if it needs more salt. (= action)</div><div class="mc-opts"><button class="mc-btn" onclick="smc('mc6',this,'tastes','is tasting')">tastes</button><button class="mc-btn" onclick="smc('mc6',this,'is tasting','is tasting')">is tasting</button><button class="mc-btn" onclick="smc('mc6',this,'taste','is tasting')">taste</button></div><div class="mc-fb" id="f-mc6"></div></div>
+
+    <div class="mc-block" id="mc7"><div class="mc-q">7. These days, I __ more attention to my diet.</div><div class="mc-opts"><button class="mc-btn" onclick="smc('mc7',this,'pay','am paying')">pay</button><button class="mc-btn" onclick="smc('mc7',this,'am paying','am paying')">am paying</button><button class="mc-btn" onclick="smc('mc7',this,'pays','am paying')">pays</button></div><div class="mc-fb" id="f-mc7"></div></div>
+
+    <div class="mc-block" id="mc8"><div class="mc-q">8. We __ a great time at the party tonight! (= experience)</div><div class="mc-opts"><button class="mc-btn" onclick="smc('mc8',this,'have','are having')">have</button><button class="mc-btn" onclick="smc('mc8',this,'are having','are having')">are having</button><button class="mc-btn" onclick="smc('mc8',this,'is having','are having')">is having</button></div><div class="mc-fb" id="f-mc8"></div></div>
+  </div>
+</div>
+
+<!-- ── PART 3 — Fill in the Blank ── -->
+<div class="part">
+  <div class="part-top">
+    <span class="p-badge" style="background:var(--sage);">Part 3</span>
+    <h2>Fill in the Blank</h2>
+    <span class="pts">9 questions</span>
+  </div>
+  <div class="part-body">
+    <div class="instr">Write the correct form of the verb in brackets. Use the time clue to help you. Click ✓ to check each answer.</div>
+
+    <div class="fi-row"><span class="fi-n">1</span><span>I always</span><input class="fi-inp" id="fi1" autocomplete="off" autocorrect="off" spellcheck="false"><span>breakfast before work. (have — possession/routine)</span><button class="chk" onclick="cf('fi1','have')">✓</button></div>
+
+    <div class="fi-row"><span class="fi-n">2</span><span>At the moment, my sister</span><input class="fi-inp" id="fi2" autocomplete="off" autocorrect="off" spellcheck="false"><span>for her university exams. (study)</span><button class="chk" onclick="cf('fi2','is studying')">✓</button></div>
+
+    <div class="fi-row"><span class="fi-n">3</span><span>He</span><input class="fi-inp" id="fi3" autocomplete="off" autocorrect="off" spellcheck="false"><span>three languages, which is impressive. (speak — fact)</span><button class="chk" onclick="cf('fi3','speaks')">✓</button></div>
+
+    <div class="fi-row"><span class="fi-n">4</span><span>I</span><input class="fi-inp" id="fi4" autocomplete="off" autocorrect="off" spellcheck="false"><span>the traffic in this city. (hate — stative)</span><button class="chk" onclick="cf('fi4','hate')">✓</button></div>
+
+    <div class="fi-row"><span class="fi-n">5</span><span>They</span><input class="fi-inp" id="fi5" autocomplete="off" autocorrect="off" spellcheck="false"><span>a barbecue in the garden right now. (have — experience)</span><button class="chk" onclick="cf('fi5','are having')">✓</button></div>
+
+    <div class="fi-row"><span class="fi-n">6</span><span>On Fridays, she usually</span><input class="fi-inp" id="fi6" autocomplete="off" autocorrect="off" spellcheck="false"><span>yoga. (do)</span><button class="chk" onclick="cf('fi6','does')">✓</button></div>
+
+    <div class="fi-row"><span class="fi-n">7</span><span>This perfume</span><input class="fi-inp" id="fi7" autocomplete="off" autocorrect="off" spellcheck="false"><span>like roses. (smell — perception)</span><button class="chk" onclick="cf('fi7','smells')">✓</button></div>
+
+    <div class="fi-row"><span class="fi-n">8</span><span>She</span><input class="fi-inp" id="fi8" autocomplete="off" autocorrect="off" spellcheck="false"><span>the flowers in the garden. (smell — action, right now)</span><button class="chk" onclick="cf('fi8','is smelling')">✓</button></div>
+
+    <div class="fi-row"><span class="fi-n">9</span><span>This year, we</span><input class="fi-inp" id="fi9" autocomplete="off" autocorrect="off" spellcheck="false"><span>a lot about English grammar. (learn)</span><button class="chk" onclick="cf('fi9','are learning')">✓</button></div>
+  </div>
+</div>
+
+<!-- ── PART 4 — Error Correction ── -->
+<div class="part">
+  <div class="part-top">
+    <span class="p-badge" style="background:var(--amber);">Part 4</span>
+    <h2>Error Correction</h2>
+    <span class="pts">7 sentences</span>
+  </div>
+  <div class="part-body">
+    <div class="instr">Each sentence contains one mistake. The wrong word or phrase is crossed out. Write the correct full sentence in the box below each one.</div>
+
+    <div class="ec-block"><div class="ec-n">Sentence 1</div><div class="ec-wrong">I <span class="err">am knowing</span> all the students in my class.</div><input class="ec-inp" id="ec1" placeholder="Write the correct sentence..." autocomplete="off" autocorrect="off" spellcheck="false"></div>
+
+    <div class="ec-block"><div class="ec-n">Sentence 2</div><div class="ec-wrong">She <span class="err">is going</span> to the gym every Monday.</div><input class="ec-inp" id="ec2" placeholder="Write the correct sentence..." autocomplete="off" autocorrect="off" spellcheck="false"></div>
+
+    <div class="ec-block"><div class="ec-n">Sentence 3</div><div class="ec-wrong">These days, he <span class="err">works</span> harder than usual because of a big project.</div><input class="ec-inp" id="ec3" placeholder="Write the correct sentence..." autocomplete="off" autocorrect="off" spellcheck="false"></div>
+
+    <div class="ec-block"><div class="ec-n">Sentence 4</div><div class="ec-wrong">I <span class="err">am wanting</span> a new pair of shoes.</div><input class="ec-inp" id="ec4" placeholder="Write the correct sentence..." autocomplete="off" autocorrect="off" spellcheck="false"></div>
+
+    <div class="ec-block"><div class="ec-n">Sentence 5</div><div class="ec-wrong">He <span class="err">is seeming</span> very tired today.</div><input class="ec-inp" id="ec5" placeholder="Write the correct sentence..." autocomplete="off" autocorrect="off" spellcheck="false"></div>
+
+    <div class="ec-block"><div class="ec-n">Sentence 6</div><div class="ec-wrong">Right now, they <span class="err">discuss</span> the plan in the meeting room.</div><input class="ec-inp" id="ec6" placeholder="Write the correct sentence..." autocomplete="off" autocorrect="off" spellcheck="false"></div>
+
+    <div class="ec-block"><div class="ec-n">Sentence 7</div><div class="ec-wrong">I <span class="err">am believing</span> you completely.</div><input class="ec-inp" id="ec7" placeholder="Write the correct sentence..." autocomplete="off" autocorrect="off" spellcheck="false"></div>
+  </div>
+</div>
+
+<!-- ── PART 5 — Sentence Transformation ── -->
+<div class="part">
+  <div class="part-top">
+    <span class="p-badge" style="background:var(--violet);">Part 5</span>
+    <h2>Sentence Transformation</h2>
+    <span class="pts">6 sentences</span>
+  </div>
+  <div class="part-body">
+    <div class="instr">Rewrite the sentence using the word given in the hint. Keep the same meaning. Do not change the hint word. You may need to add other words.</div>
+
+    <div class="tr-block">
+      <div class="tr-orig">1. "I don't like mornings." → She told me she dislikes mornings. <br>Now write it as: <em>She ___ mornings.</em></div>
+      <div class="tr-hint">💡 Use: HATE or DISLIKE (choose one)</div>
+      <input class="tr-inp" id="tr1" placeholder="She ..." autocomplete="off" autocorrect="off" spellcheck="false">
+    </div>
+
+    <div class="tr-block">
+      <div class="tr-orig">2. "Tom is looking out of the window." → Change to a stative meaning: he <em>appears</em> tired.</div>
+      <div class="tr-hint">💡 Use: LOOKS (stative meaning)</div>
+      <input class="tr-inp" id="tr2" placeholder="Tom ..." autocomplete="off" autocorrect="off" spellcheck="false">
+    </div>
+
+    <div class="tr-block">
+      <div class="tr-orig">3. "I believe this is a mistake." → Rewrite using THINK.</div>
+      <div class="tr-hint">💡 Use: THINK (= believe — simple, not continuous)</div>
+      <input class="tr-inp" id="tr3" placeholder="I ..." autocomplete="off" autocorrect="off" spellcheck="false">
+    </div>
+
+    <div class="tr-block">
+      <div class="tr-orig">4. "At the moment, we are improving our vocabulary." → Make it a routine: every week.</div>
+      <div class="tr-hint">💡 Change time clue to: EVERY WEEK</div>
+      <input class="tr-inp" id="tr4" placeholder="Every week, we ..." autocomplete="off" autocorrect="off" spellcheck="false">
+    </div>
+
+    <div class="tr-block">
+      <div class="tr-orig">5. "James owns two houses." → Rewrite using HAVE (possession).</div>
+      <div class="tr-hint">💡 Use: HAVE (stative — do not use continuous)</div>
+      <input class="tr-inp" id="tr5" placeholder="James ..." autocomplete="off" autocorrect="off" spellcheck="false">
+    </div>
+
+    <div class="tr-block">
+      <div class="tr-orig">6. "She is being very polite at the party." → Explain why continuous is correct here.</div>
+      <div class="tr-hint">💡 Is "be" stative or dynamic here? Rewrite the same sentence and add a short note: <em>This is correct because...</em></div>
+      <input class="tr-inp" id="tr6" placeholder="She is being... This is correct because..." autocomplete="off" autocorrect="off" spellcheck="false">
+    </div>
+  </div>
+</div>
+
+<!-- ── PART 6 — Free Writing ── -->
+<div class="part">
+  <div class="part-top">
+    <span class="p-badge" style="background:linear-gradient(135deg,var(--terra),var(--amber));background-clip:initial;">Part 6</span>
+    <h2>Free Writing — My Routine vs This Week</h2>
+    <span class="pts">Free production</span>
+  </div>
+  <div class="part-body">
+    <div class="instr">Write 8–10 sentences comparing your normal weekly routine with what is happening <em>this week specifically</em>. Use both Present Simple and Present Continuous. Follow the checklist below.</div>
+
+    <div class="writing-checklist">
+      <h4>✅ Before you submit, check:</h4>
+      <ul>
+        <li>At least 4 Present Simple sentences (routine/habit)</li>
+        <li>At least 3 Present Continuous sentences (this week / right now)</li>
+        <li>At least 2 stative verbs used correctly (know, love, want, need, believe, prefer, understand…)</li>
+        <li>At least 1 dual-use verb (have, think, be, look, taste, smell) used in both its meanings</li>
+        <li>At least 3 different time expressions used (e.g. usually, right now, these days, every week, at the moment)</li>
+      </ul>
+    </div>
+
+    <div class="wl"><div class="wl-n">1</div><input class="wl-inp" id="fw1" placeholder="Every week, I usually..."></div>
+    <div class="wl"><div class="wl-n">2</div><input class="wl-inp" id="fw2" placeholder="I always / never..."></div>
+    <div class="wl"><div class="wl-n">3</div><input class="wl-inp" id="fw3" placeholder="I love / know / want... (stative verb)"></div>
+    <div class="wl"><div class="wl-n">4</div><input class="wl-inp" id="fw4" placeholder="On weekdays, I..."></div>
+    <div class="wl"><div class="wl-n">5</div><input class="wl-inp" id="fw5" placeholder="However, this week I am..."></div>
+    <div class="wl"><div class="wl-n">6</div><input class="wl-inp" id="fw6" placeholder="At the moment, I am also..."></div>
+    <div class="wl"><div class="wl-n">7</div><input class="wl-inp" id="fw7" placeholder="These days, I am..."></div>
+    <div class="wl"><div class="wl-n">8</div><input class="wl-inp" id="fw8" placeholder="I have... (possession) / We are having... (experience)"></div>
+    <div class="wl"><div class="wl-n">9</div><input class="wl-inp" id="fw9" placeholder="I think... (belief) / I am thinking about... (reflecting)"></div>
+    <div class="wl"><div class="wl-n">10</div><input class="wl-inp" id="fw10" placeholder="Overall, I believe / understand / feel that..."></div>
+  </div>
+</div>
+
+<button class="main-btn" style="background:linear-gradient(135deg,var(--terra),var(--warm));" onclick="subHW()">⭐ Submit Homework</button>
+<div class="score-card" id="finalSc"></div>
+
+<div id="save-toast">✓ Saved!</div>
+<div class="save-bar">
+  <button class="save-btn reset" onclick="clearProgress('tuba_b1_hw12_exp')">Reset</button>
+  <button class="save-btn" onclick="saveProgress('tuba_b1_hw12_exp')">Save Progress</button>
+</div>
+
+<script>
+/* Reference accordion */
+function togRef(){
+  const b=document.getElementById('refBody'),c=document.getElementById('refChev');
+  b.classList.toggle('open');
+  c.style.transform=b.classList.contains('open')?'rotate(180deg)':'';
+}
+
+/* T/F/NG */
+function stf(pid,btn,val,correct){
+  const par=document.getElementById(pid);
+  par.querySelectorAll('.tf-btn').forEach(b=>b.classList.remove('cor','wrng'));
+  const ok=val===correct;
+  btn.classList.add(ok?'cor':'wrng');
+  if(!ok)par.querySelectorAll('.tf-btn').forEach(b=>{if(b.textContent.trim()===correct)b.classList.add('cor');});
+  const fb=document.getElementById('f-'+pid);
+  fb.textContent=ok?'✓ Correct!':'✗ Correct answer highlighted above.';
+  fb.className='tf-fb show '+(ok?'ok':'no');
+}
+
+/* MC */
+function smc(pid,btn,val,correct){
+  const par=document.getElementById(pid);
+  par.querySelectorAll('.mc-btn').forEach(b=>b.classList.remove('cor','wrng'));
+  const ok=val===correct;
+  btn.classList.add(ok?'cor':'wrng');
+  if(!ok)par.querySelectorAll('.mc-btn').forEach(b=>{if(b.textContent.trim()===correct)b.classList.add('cor');});
+  const fb=document.getElementById('f-'+pid);
+  fb.textContent=ok?'✓ Correct!':'✗ Correct answer highlighted above.';
+  fb.className='mc-fb show '+(ok?'ok':'no');
+}
+
+/* Fill-in */
+function cf(id,a,b2){
+  const el=document.getElementById(id);if(!el)return;
+  const v=el.value.trim().toLowerCase();
+  const ok=v===a.toLowerCase()||(b2&&v===b2.toLowerCase());
+  el.classList.toggle('ok',ok);el.classList.toggle('no',!ok);
+}
+
+/* Submit */
+function subHW(){
+  const msg=document.getElementById('finalSc');
+  msg.style.background='linear-gradient(135deg,var(--terra),var(--amber))';
+  msg.innerHTML='<div class="sc-t" style="font-size:22px;margin-bottom:6px;">✅ Homework Submitted!</div><p class="sc-b">Parts 1–3 are self-checked. Parts 4–6 are ready for your teacher to review. Great work today!</p>';
+  msg.classList.add('show');
+  msg.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+/* Save / load */
+function saveProgress(key){
+  const s={inputs:{}};
+  document.querySelectorAll('input[id]').forEach(e=>{s.inputs[e.id]=e.value;});
+  try{localStorage.setItem(key,JSON.stringify(s));showSaveToast();}catch(e){}
+}
+function loadProgress(key){
+  try{
+    const r=localStorage.getItem(key);if(!r)return;
+    const s=JSON.parse(r);
+    if(s.inputs){Object.entries(s.inputs).forEach(([id,val])=>{const el=document.getElementById(id);if(el)el.value=val;});}
+  }catch(e){}
+}
+function clearProgress(key){if(confirm('Clear all saved progress?')){localStorage.removeItem(key);location.reload();}}
+function showSaveToast(){
+  const t=document.getElementById('save-toast');if(!t)return;
+  t.style.opacity='1';t.style.transform='translateY(0)';
+  setTimeout(()=>{t.style.opacity='0';t.style.transform='translateY(8px)';},2000);
+}
+document.addEventListener('input',()=>saveProgress('tuba_b1_hw12_exp'));
+document.addEventListener('DOMContentLoaded',()=>loadProgress('tuba_b1_hw12_exp'));
+</script>
+</div>
+</body>
+</html>
