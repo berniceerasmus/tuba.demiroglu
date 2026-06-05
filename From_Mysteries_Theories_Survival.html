@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FROM — English Lesson B1+ | Tuba</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f7f6f2;--white:#ffffff;--surface:#f0ede6;--border:#ddd9cf;
+  --accent:#b5430a;--accent2:#5a4a8a;--gold:#c89a0a;
+  --green:#2e7d52;--blue:#1a5f9e;
+  --text:#1a1814;--muted:#6b6560;--light:#faf9f6;
+}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;padding:2rem 1rem 4rem}
+.wrap{max-width:860px;margin:0 auto}
+
+/* HEADER */
+.header{background:var(--white);border:1px solid var(--border);border-top:5px solid var(--accent);border-radius:12px;padding:2rem;margin-bottom:1.5rem;text-align:center}
+.show-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:.4rem}
+.lesson-title{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;color:var(--text);line-height:1.1;margin-bottom:.4rem}
+.lesson-title span{color:var(--accent)}
+.subtitle{font-size:13px;color:var(--muted);margin-bottom:1rem}
+.meta-row{display:flex;justify-content:center;gap:.65rem;flex-wrap:wrap}
+.meta-pill{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:4px 14px;font-size:12px;color:var(--muted)}
+.meta-pill strong{color:var(--accent);font-weight:600}
+
+/* OBJECTIVES */
+.objectives{background:#fff9f5;border:1px solid #f0d0b8;border-left:4px solid var(--accent);border-radius:8px;padding:1.25rem 1.5rem;margin-bottom:1.5rem}
+.block-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:.75rem}
+.obj-list{display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
+.obj-item{font-size:13.5px;display:flex;gap:.5rem;align-items:flex-start}
+.obj-item::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
+
+/* SECTION */
+.section{background:var(--white);border:1px solid var(--border);border-radius:12px;margin-bottom:1.25rem;overflow:hidden}
+.section-head{background:var(--surface);border-bottom:1px solid var(--border);padding:.85rem 1.25rem;display:flex;align-items:center;gap:.85rem}
+.section-num{background:var(--accent);color:#fff;font-size:11px;font-weight:700;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.section-title{font-size:1rem;font-weight:600;color:var(--text)}
+.section-time{margin-left:auto;font-size:11px;color:var(--muted);background:var(--white);padding:3px 10px;border-radius:20px;border:1px solid var(--border);white-space:nowrap}
+.section-body{padding:1.25rem 1.5rem}
+
+
+/* GRAMMAR EXPLAIN */
+.grammar-explain{background:#f0f4ff;border:1px solid #c8d4f0;border-left:4px solid var(--accent2);border-radius:8px;padding:1.1rem 1.4rem;margin-bottom:1.25rem;font-size:13.5px;color:var(--text);line-height:1.65}
+.grammar-explain p{margin:0}
+.ge-title{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent2);font-weight:700;margin-bottom:.65rem}
+.ge-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.65rem}
+.ge-item{background:#fff;border:1px solid #d0d8f0;border-radius:6px;padding:.6rem .85rem;font-size:13px;line-height:1.5}
+.ge-item em{display:block;color:var(--muted);font-style:italic;font-size:12px;margin-top:2px}
+.ge-item u{text-decoration:none;color:var(--accent2);font-weight:600}
+.ge-tag{display:inline-block;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;padding:2px 7px;border-radius:4px;margin-bottom:3px;margin-right:4px}
+.ge-noun .ge-tag{background:#e6f0ff;color:var(--blue)}
+.ge-verb .ge-tag{background:#e6f7ee;color:var(--green)}
+.ge-adj .ge-tag{background:#fff0e8;color:var(--accent)}
+.ge-adv .ge-tag{background:#f0ecff;color:var(--accent2)}
+
+/* VOCAB TABLE */
+.vocab-table{width:100%;border-collapse:collapse;font-size:13.5px}
+.vocab-table th{background:var(--surface);color:var(--muted);font-weight:700;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:.6rem .85rem;text-align:left;border-bottom:1px solid var(--border)}
+.vocab-table td{padding:.6rem .85rem;border-bottom:1px solid #eee;vertical-align:top}
+.vocab-table tr:last-child td{border-bottom:none}
+.vocab-table tr:hover td{background:#fafaf7}
+.vocab-word{color:var(--accent);font-weight:600}
+
+/* POS */
+.pos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.65rem;margin-top:1rem}
+.pos-card{background:var(--light);border:1px solid var(--border);border-radius:8px;padding:.85rem}
+.pos-label{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:.5rem;font-weight:700}
+.pos-label.noun{color:var(--blue)}.pos-label.verb{color:var(--green)}.pos-label.adj{color:var(--accent)}.pos-label.adv{color:var(--accent2)}
+.pos-item{font-size:13px;padding:2px 0;border-bottom:1px solid var(--border);display:block}
+.pos-item:last-child{border-bottom:none}
+
+/* GRAMMAR */
+.grammar-rule{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:.65rem 1rem;font-size:13px;color:var(--text);margin-bottom:1rem;font-family:monospace}
+.grammar-rule span{color:var(--accent);font-weight:700}
+.example-block{border-left:3px solid var(--accent2);background:#f9f8ff;border-radius:0 6px 6px 0;padding:.5rem .85rem;margin:.5rem 0}
+.direct{font-size:12.5px;color:var(--muted);font-style:italic}
+.result{font-size:13.5px;color:var(--text);margin-top:2px}
+.result em{color:var(--accent2);font-style:normal;font-weight:700}
+
+/* PRACTICE */
+.practice-box{background:var(--light);border:1px solid var(--border);border-radius:8px;padding:1rem 1.1rem;margin-top:.85rem}
+.practice-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem;font-weight:700}
+.practice-item{font-size:13.5px;padding:.45rem 0;border-bottom:1px solid #eee;display:flex;gap:.6rem}
+.practice-item:last-child{border-bottom:none}
+.q-num{color:var(--accent);font-weight:700;flex-shrink:0}
+.answer-line{color:#aaa;font-size:12px;margin-top:3px;font-style:italic}
+
+/* DISCUSSION */
+.disc-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
+.disc-q{background:var(--light);border:1px solid var(--border);border-radius:8px;padding:.85rem 1rem;font-size:13.5px;display:flex;gap:.65rem}
+.q-icon{color:var(--accent);font-weight:700;flex-shrink:0}
+.starters-box{background:#f5f3ff;border:1px solid #d8d0f0;border-radius:8px;padding:1rem 1.25rem;margin-top:1rem}
+.starters-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:.65rem;font-weight:700}
+.starters-list{display:flex;flex-wrap:wrap;gap:.5rem}
+.starter-chip{background:#fff;border:1px solid #c8c0e8;border-radius:20px;padding:4px 12px;font-size:12.5px;color:var(--accent2)}
+
+/* CHALLENGE */
+.challenge-box{background:linear-gradient(135deg,#fff9f5,#f8f5ff);border:1px solid #e0d0f0;border-radius:10px;padding:1.5rem;text-align:center}
+.challenge-topic{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--accent);font-weight:700;margin:.75rem 0}
+.rules-row{display:flex;justify-content:center;gap:.65rem;flex-wrap:wrap;margin-top:.85rem}
+.rule-badge{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:.4rem .85rem;font-size:12.5px;color:var(--text)}
+
+/* HOMEWORK */
+.hw-part{background:var(--white);border:1px solid var(--border);border-radius:8px;margin-bottom:.85rem;overflow:hidden}
+.hw-header{background:var(--surface);padding:.65rem 1.1rem;display:flex;align-items:center;gap:.75rem;border-bottom:1px solid var(--border)}
+.hw-letter{background:var(--accent);color:#fff;font-size:10px;font-weight:700;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hw-title{font-size:13px;font-weight:600}
+.hw-body{padding:.85rem 1.1rem}
+.hw-item{font-size:13.5px;padding:.35rem 0;border-bottom:1px solid #eee;display:flex;gap:.6rem}
+.hw-item:last-child{border-bottom:none}
+.hw-num{color:var(--accent);font-weight:700;flex-shrink:0}
+.hw-writing{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:.85rem 1rem;margin-bottom:.75rem;font-size:13.5px}
+.hw-writing strong{color:var(--accent);font-weight:700;display:block;margin-bottom:.3rem;font-size:10px;letter-spacing:2px;text-transform:uppercase}
+.hw-2col{display:grid;grid-template-columns:1fr 1fr;gap:.1rem}
+
+@media(max-width:600px){
+  .disc-grid,.obj-list,.pos-grid,.hw-2col{grid-template-columns:1fr}
+  .lesson-title{font-size:1.75rem}
+}
+@media print{
+  body{background:#fff;padding:.5rem}
+  .section,.hw-part{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="show-tag">English Lesson · B1+ · 45 minutes</div>
+    <div class="lesson-title">Mysteries, Theories &amp; <span>Survival</span></div>
+    <div class="subtitle">Understanding <strong>FROM</strong> — Season 1 complete · Season 2 in progress · Student: Tuba</div>
+    <div class="meta-row">
+      <span class="meta-pill"><strong>Grammar:</strong> Relative Clauses · Reported Speech</span>
+      <span class="meta-pill"><strong>Skills:</strong> Vocabulary · Speaking · Discussion</span>
+      <span class="meta-pill"><strong>Level:</strong> B1+</span>
+    </div>
+  </div>
+
+  <div class="objectives">
+    <div class="block-label">Lesson Objectives</div>
+    <div class="obj-list">
+      <div class="obj-item">Discuss theories using B1+ opinion language</div>
+      <div class="obj-item">Use relative clauses to describe characters and places</div>
+      <div class="obj-item">Use reported speech to explain events from the show</div>
+      <div class="obj-item">Express opinions confidently with linking words</div>
+      <div class="obj-item">Build and use key mystery &amp; survival vocabulary</div>
+      <div class="obj-item">Construct longer, more accurate complex sentences</div>
+    </div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-num">1</div>
+      <div class="section-title">Vocabulary Discovery</div>
+      <div class="section-time">⏱ 10 mins</div>
+    </div>
+    <div class="section-body">
+      <div class="grammar-explain">
+        <div class="ge-title">What are Parts of Speech?</div>
+        <p>Every word in English has a job. We call these jobs <strong>parts of speech</strong>. The four most important ones are:</p>
+        <div class="ge-grid">
+          <div class="ge-item ge-noun"><span class="ge-tag">Noun</span>A person, place, or thing.<em>"The <u>creature</u> appeared at night."</em></div>
+          <div class="ge-item ge-verb"><span class="ge-tag">Verb</span>An action or a state.<em>"They <u>investigate</u> the strange symbols."</em></div>
+          <div class="ge-item ge-adj"><span class="ge-tag">Adjective</span>Describes a noun.<em>"The town is <u>mysterious</u> and dangerous."</em></div>
+          <div class="ge-item ge-adv"><span class="ge-tag">Adverb</span>Describes a verb or adjective.<em>"She looked around <u>carefully</u>."</em></div>
+        </div>
+        <p style="margin-top:.75rem">Knowing the part of speech helps you use a word correctly and build longer, more natural sentences in English.</p>
+      </div>
+      <table class="vocab-table">
+        <thead><tr><th>Word</th><th>Meaning</th><th>Example from FROM</th></tr></thead>
+        <tbody>
+          <tr><td class="vocab-word">mysterious</td><td>difficult to explain</td><td>The town is mysterious — no one knows why it exists.</td></tr>
+          <tr><td class="vocab-word">trapped</td><td>unable to leave</td><td>Everyone is trapped inside the town's boundaries.</td></tr>
+          <tr><td class="vocab-word">survivor</td><td>someone who stays alive through danger</td><td>Boyd is a strong survivor who protects the others.</td></tr>
+          <tr><td class="vocab-word">creature</td><td>a strange or unknown living being</td><td>The creatures appear at night and cannot be stopped.</td></tr>
+          <tr><td class="vocab-word">investigate</td><td>to examine something carefully</td><td>Jim and Boyd investigate the strange symbols.</td></tr>
+          <tr><td class="vocab-word">evidence</td><td>information that proves something</td><td>We need more evidence to understand the town.</td></tr>
+          <tr><td class="vocab-word">theory</td><td>an idea that explains something</td><td>I have a theory about why people can't leave.</td></tr>
+          <tr><td class="vocab-word">clue</td><td>a piece of information that helps solve a mystery</td><td>The old radio may be an important clue.</td></tr>
+          <tr><td class="vocab-word">terrified</td><td>extremely frightened</td><td>The new arrivals are terrified when night comes.</td></tr>
+          <tr><td class="vocab-word">escape</td><td>to get away from danger</td><td>Nobody has managed to escape from the town.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="pos-grid">
+        <div class="pos-card">
+          <div class="pos-label noun">Nouns</div>
+          <span class="pos-item">survivor</span><span class="pos-item">evidence</span><span class="pos-item">theory</span><span class="pos-item">clue</span><span class="pos-item">creature</span>
+        </div>
+        <div class="pos-card">
+          <div class="pos-label verb">Verbs</div>
+          <span class="pos-item">escape</span><span class="pos-item">investigate</span><span class="pos-item">survive</span><span class="pos-item">discover</span><span class="pos-item">believe</span>
+        </div>
+        <div class="pos-card">
+          <div class="pos-label adj">Adjectives</div>
+          <span class="pos-item">mysterious</span><span class="pos-item">terrified</span><span class="pos-item">dangerous</span><span class="pos-item">confusing</span><span class="pos-item">strange</span>
+        </div>
+        <div class="pos-card">
+          <div class="pos-label adv">Adverbs</div>
+          <span class="pos-item">carefully</span><span class="pos-item">mysteriously</span><span class="pos-item">suddenly</span><span class="pos-item">desperately</span><span class="pos-item">unexpectedly</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-num">2</div>
+      <div class="section-title">Grammar Focus 1 — Relative Clauses <span style="font-size:.8rem;color:var(--accent2);font-weight:400">(NEW)</span></div>
+      <div class="section-time">⏱ 10 mins</div>
+    </div>
+    <div class="section-body">
+      <div class="grammar-explain">
+        <div class="ge-title">What is a Relative Clause?</div>
+        <p>A <strong>relative clause</strong> gives extra information about a person, thing, or place — without starting a new sentence. We use it to make our sentences longer, richer, and more natural.</p>
+        <div class="ge-grid">
+          <div class="ge-item ge-noun"><span class="ge-tag">who</span>Use for people.<em>"Boyd is the man <u>who</u> protects everyone."</em></div>
+          <div class="ge-item ge-verb"><span class="ge-tag">which</span>Use for things.<em>"The talisman is an object <u>which</u> keeps you safe."</em></div>
+          <div class="ge-item ge-adj" style="grid-column:span 2"><span class="ge-tag">where</span>Use for places.<em>"The town is a place <u>where</u> nobody can escape."</em></div>
+        </div>
+        <p style="margin-top:.75rem">The relative clause comes <strong>directly after</strong> the noun it describes. The verb tense inside the clause does not change.</p>
+      </div>
+      <div class="grammar-rule"><span>who</span> → for people &nbsp;&nbsp;&nbsp; <span>which</span> → for things &nbsp;&nbsp;&nbsp; <span>where</span> → for places</div>
+
+      <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:.5rem">Examples from FROM</div>
+      <div class="example-block">
+        <div class="direct">Boyd is the man. He tries to protect everyone.</div>
+        <div class="result">Boyd is the man <em>who</em> tries to protect everyone.</div>
+      </div>
+      <div class="example-block">
+        <div class="direct">The creatures come out at night. They are dangerous.</div>
+        <div class="result">The creatures are monsters <em>which</em> come out at night.</div>
+      </div>
+      <div class="example-block">
+        <div class="direct">The town traps people. Nobody can escape there.</div>
+        <div class="result">The town is a place <em>where</em> nobody can escape.</div>
+      </div>
+      <div class="example-block">
+        <div class="direct">Victor knows many secrets. He has lived there for years.</div>
+        <div class="result">Victor is a character <em>who</em> knows many secrets.</div>
+      </div>
+
+      <div class="practice-box">
+        <div class="practice-label">Practice — Combine the sentences using who, which, or where</div>
+        <div class="practice-item"><span class="q-num">1.</span><span>Victor knows many secrets. / Victor has lived there for years.<div class="answer-line">→ Victor is a man who has lived there for years and knows many secrets.</div></span></div>
+        <div class="practice-item"><span class="q-num">2.</span><span>The town is dangerous. / Everyone is trapped there.<div class="answer-line">→ The town is a place where everyone is trapped.</div></span></div>
+        <div class="practice-item"><span class="q-num">3.</span><span>The tree appears often. / The tree may have special powers.<div class="answer-line">→ The tree is something which may have special powers.</div></span></div>
+        <div class="practice-item"><span class="q-num">4.</span><span>The talismans protect people. / They hang on every door.<div class="answer-line">→ The talismans are objects which hang on every door and protect the people inside.</div></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-num">3</div>
+      <div class="section-title">Grammar Focus 2 — Reported Speech <span style="font-size:.8rem;color:var(--accent2);font-weight:400">(NEW)</span></div>
+      <div class="section-time">⏱ 10 mins</div>
+    </div>
+    <div class="section-body">
+      <div class="grammar-explain">
+        <div class="ge-title">What is Reported Speech?</div>
+        <p><strong>Reported speech</strong> (also called indirect speech) is how we tell someone what another person said — without using their exact words. We do not use quotation marks. Instead, the verb tense moves back one step into the past.</p>
+        <div class="ge-grid">
+          <div class="ge-item ge-noun"><span class="ge-tag">Direct</span>Boyd said: <em>"<u>We need</u> answers."</em></div>
+          <div class="ge-item ge-verb"><span class="ge-tag">Reported</span>Boyd said that <em>they <u>needed</u> answers.</em></div>
+          <div class="ge-item ge-adj"><span class="ge-tag">Direct</span>Victor said: <em>"I <u>have seen</u> this before."</em></div>
+          <div class="ge-item ge-adv"><span class="ge-tag">Reported</span>Victor said that <em>he <u>had seen</u> it before.</em></div>
+        </div>
+        <p style="margin-top:.75rem"><strong>Key tense changes:</strong> &nbsp; is/are → was/were &nbsp;·&nbsp; need → needed &nbsp;·&nbsp; will → would &nbsp;·&nbsp; can → could &nbsp;·&nbsp; have seen → had seen</p>
+      </div>
+      <div class="grammar-rule"><span>is/are</span> → was/were &nbsp;&nbsp; <span>need</span> → needed &nbsp;&nbsp; <span>have seen</span> → had seen &nbsp;&nbsp; <span>will</span> → would &nbsp;&nbsp; <span>can</span> → could</div>
+
+      <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:.5rem">FROM Characters — Direct → Reported</div>
+      <div class="example-block">
+        <div class="direct">"We need answers." — Boyd</div>
+        <div class="result">Boyd said that they <em>needed</em> answers.</div>
+      </div>
+      <div class="example-block">
+        <div class="direct">"I have seen this before." — Victor</div>
+        <div class="result">Victor said that he <em>had seen</em> it before.</div>
+      </div>
+      <div class="example-block">
+        <div class="direct">"We must find a way out." — Tabitha</div>
+        <div class="result">Tabitha said that they <em>had to</em> find a way out.</div>
+      </div>
+
+      <div class="practice-box">
+        <div class="practice-label">Practice — Change to reported speech</div>
+        <div class="practice-item"><span class="q-num">1.</span><span>Jim: "This place is dangerous."<div class="answer-line">→ Jim said that this place was dangerous.</div></span></div>
+        <div class="practice-item"><span class="q-num">2.</span><span>Donna: "We need to stay together."<div class="answer-line">→ Donna said that they needed to stay together.</div></span></div>
+        <div class="practice-item"><span class="q-num">3.</span><span>Victor: "I know something important."<div class="answer-line">→ Victor said that he knew something important.</div></span></div>
+        <div class="practice-item"><span class="q-num">4.</span><span>Boyd: "We cannot give up."<div class="answer-line">→ Boyd said that they could not give up.</div></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-num">4</div>
+      <div class="section-title">Speaking &amp; Discussion — Theory Time</div>
+      <div class="section-time">⏱ 10 mins</div>
+    </div>
+    <div class="section-body">
+      <div class="grammar-explain">
+        <div class="ge-title">Speaking — How to express opinions in English</div>
+        <p>In English, strong opinions are built with <strong>opinion starters + a reason</strong>. The best answers at B1+ level use complete sentences, connecting words (<em>because, however, although, which means that</em>), and specific examples from the show.</p>
+        <div class="ge-grid">
+          <div class="ge-item ge-noun"><span class="ge-tag">Weak answer</span><em>"I think the town is a simulation."</em><span style="display:block;font-size:11.5px;color:#a00;margin-top:3px">✗ Too short — no reason given</span></div>
+          <div class="ge-item ge-verb"><span class="ge-tag">Strong answer</span><em>"My theory is that the town is a simulation, which would explain why nobody can find the exit."</em><span style="display:block;font-size:11.5px;color:var(--green);margin-top:3px">✓ Opinion + reason + relative clause</span></div>
+        </div>
+        <p style="margin-top:.75rem">Try to speak in <strong>full sentences</strong> and use at least one opinion starter from the list below each time.</p>
+      </div>
+      <div class="disc-grid">
+        <div class="disc-q"><span class="q-icon">?</span>What do you think the town really is?</div>
+        <div class="disc-q"><span class="q-icon">?</span>Why do you think people can't leave?</div>
+        <div class="disc-q"><span class="q-icon">?</span>Which character do you trust the most — and why?</div>
+        <div class="disc-q"><span class="q-icon">?</span>Which mystery is the most interesting to you?</div>
+        <div class="disc-q"><span class="q-icon">?</span>What would you do if you arrived in the town?</div>
+        <div class="disc-q"><span class="q-icon">?</span>What do you think the creatures really want?</div>
+        <div class="disc-q"><span class="q-icon">?</span>Is Victor a good person or a bad person?</div>
+        <div class="disc-q"><span class="q-icon">?</span>How do you think Season 2 will end?</div>
+      </div>
+
+      <div class="starters-box">
+        <div class="starters-label">Opinion starters — encourage Tuba to use these</div>
+        <div class="starters-list">
+          <span class="starter-chip">I believe that...</span>
+          <span class="starter-chip">My theory is that...</span>
+          <span class="starter-chip">In my opinion...</span>
+          <span class="starter-chip">One possibility is that...</span>
+          <span class="starter-chip">It seems likely that...</span>
+          <span class="starter-chip">I strongly suspect that...</span>
+          <span class="starter-chip">From the evidence we have seen...</span>
+          <span class="starter-chip">I agree / I disagree because...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 5 -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-num">5</div>
+      <div class="section-title">Fluency Challenge</div>
+      <div class="section-time">⏱ 5 mins</div>
+    </div>
+    <div class="section-body">
+      <div class="challenge-box">
+        <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent2);font-weight:700;margin-bottom:.5rem">One-minute speaking task — no notes allowed</div>
+        <div style="font-size:1rem;font-weight:600;color:var(--text)">Speak for 60 seconds on this topic:</div>
+        <div class="challenge-topic">"My Theory About the Town"</div>
+        <div class="rules-row">
+          <span class="rule-badge">✓ No notes</span>
+          <span class="rule-badge">✓ Use 2+ relative clauses</span>
+          <span class="rule-badge">✓ Use 2+ opinion starters</span>
+          <span class="rule-badge">✓ Use 5+ vocabulary words</span>
+          <span class="rule-badge">✓ Full 60 seconds</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOMEWORK -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-num" style="background:var(--accent2);font-size:9px">HW</div>
+      <div class="section-title">Homework Package</div>
+    </div>
+    <div class="section-body">
+      
+
+      <div class="hw-part">
+        <div class="hw-header"><div class="hw-letter">A</div><div class="hw-title">Vocabulary — Write one sentence for each word</div></div>
+        <div class="hw-body">
+          <div class="hw-2col">
+            <div class="hw-item"><span class="hw-num">1.</span> clue</div>
+            <div class="hw-item"><span class="hw-num">2.</span> evidence</div>
+            <div class="hw-item"><span class="hw-num">3.</span> investigate</div>
+            <div class="hw-item"><span class="hw-num">4.</span> trapped</div>
+            <div class="hw-item"><span class="hw-num">5.</span> survivor</div>
+            <div class="hw-item"><span class="hw-num">6.</span> escape</div>
+            <div class="hw-item"><span class="hw-num">7.</span> mysterious</div>
+            <div class="hw-item"><span class="hw-num">8.</span> creature</div>
+            <div class="hw-item"><span class="hw-num">9.</span> theory</div>
+            <div class="hw-item"><span class="hw-num">10.</span> terrified</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hw-part">
+        <div class="hw-header"><div class="hw-letter">B</div><div class="hw-title">Relative Clauses — Join the sentences using who, which or where</div></div>
+        <div class="hw-body">
+          <div class="hw-item"><span class="hw-num">1.</span> Boyd protects people. Boyd is brave.</div>
+          <div class="hw-item"><span class="hw-num">2.</span> The creatures appear at night. The creatures are dangerous.</div>
+          <div class="hw-item"><span class="hw-num">3.</span> Victor knows many secrets. Victor is unusual.</div>
+          <div class="hw-item"><span class="hw-num">4.</span> The town has many mysteries. The town traps people.</div>
+          <div class="hw-item"><span class="hw-num">5.</span> The tree appears often. The tree may be important.</div>
+        </div>
+      </div>
+
+      <div class="hw-part">
+        <div class="hw-header"><div class="hw-letter">C</div><div class="hw-title">Reported Speech — Change to reported speech</div></div>
+        <div class="hw-body">
+          <div class="hw-item"><span class="hw-num">1.</span> Tabitha: "We need more answers."</div>
+          <div class="hw-item"><span class="hw-num">2.</span> Boyd: "We cannot give up."</div>
+          <div class="hw-item"><span class="hw-num">3.</span> Jim: "I don't trust this place."</div>
+          <div class="hw-item"><span class="hw-num">4.</span> Donna: "We must stay calm."</div>
+          <div class="hw-item"><span class="hw-num">5.</span> Victor: "I have seen this before."</div>
+        </div>
+      </div>
+
+      <div class="hw-part">
+        <div class="hw-header"><div class="hw-letter">D</div><div class="hw-title">Writing Task — 200–250 words</div></div>
+        <div class="hw-body">
+          <div class="hw-writing"><strong>Title</strong>"My Theory About the Town in FROM"</div>
+          <div class="hw-item"><span class="hw-num">✓</span> Use at least 5 vocabulary words from this lesson</div>
+          <div class="hw-item"><span class="hw-num">✓</span> Include 3 relative clauses (who / which / where)</div>
+          <div class="hw-item"><span class="hw-num">✓</span> Include 2 examples of reported speech</div>
+          <div class="hw-item"><span class="hw-num">✓</span> Give clear reasons for your opinions</div>
+          <div class="hw-item"><span class="hw-num">✓</span> Predict what might happen next in Season 2</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border)">
+    <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:.75rem">Next lesson ideas</div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem">
+      <span style="background:var(--white);border:1px solid var(--border);border-radius:20px;padding:4px 14px;font-size:12px;color:var(--muted)">Modal verbs of speculation</span>
+      <span style="background:var(--white);border:1px solid var(--border);border-radius:20px;padding:4px 14px;font-size:12px;color:var(--muted)">Passive voice</span>
+      <span style="background:var(--white);border:1px solid var(--border);border-radius:20px;padding:4px 14px;font-size:12px;color:var(--muted)">Narrative tenses</span>
+      <span style="background:var(--white);border:1px solid var(--border);border-radius:20px;padding:4px 14px;font-size:12px;color:var(--muted)">Conditionals for predictions</span>
+      <span style="background:var(--white);border:1px solid var(--border);border-radius:20px;padding:4px 14px;font-size:12px;color:var(--muted)">Debate: Is Victor trustworthy?</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
