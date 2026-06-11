@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FROM — Homework | Tuba B1+</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f7f6f2;--white:#ffffff;--surface:#f0ede6;--border:#ddd9cf;--accent:#b5430a;--accent2:#5a4a8a;--gold:#c89a0a;--green:#2e7d52;--blue:#1a5f9e;--text:#1a1814;--muted:#6b6560;--light:#faf9f6;--red:#a00;}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;padding:2rem 1rem 5rem}
+.wrap{max-width:860px;margin:0 auto}
+.header{background:var(--white);border:1px solid var(--border);border-top:5px solid var(--accent);border-radius:12px;padding:2rem;margin-bottom:1.5rem;text-align:center}
+.show-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:.4rem}
+.lesson-title{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:var(--text);line-height:1.1;margin-bottom:.4rem}
+.lesson-title span{color:var(--accent)}
+.subtitle{font-size:13px;color:var(--muted);margin-bottom:1rem}
+.meta-row{display:flex;justify-content:center;gap:.65rem;flex-wrap:wrap}
+.meta-pill{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:4px 14px;font-size:12px;color:var(--muted)}
+.meta-pill strong{color:var(--accent);font-weight:600}
+
+/* Reference accordion */
+.ref-block{background:var(--white);border:1px solid var(--border);border-radius:12px;margin-bottom:1.25rem;overflow:hidden}
+.ref-top{display:flex;align-items:center;gap:.75rem;padding:.85rem 1.25rem;cursor:pointer;user-select:none;background:var(--surface);border-bottom:1px solid var(--border)}
+.ref-top:hover{background:#ebe8e1}
+.ref-ico{width:32px;height:32px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.ref-meta{flex:1}
+.ref-meta h2{font-size:14px;font-weight:600;color:var(--text)}
+.ref-meta p{font-size:11px;color:var(--muted)}
+.ref-chev{color:var(--muted);font-size:11px;transition:transform .25s;flex-shrink:0}
+.ref-body{padding:0 1.5rem;max-height:0;overflow:hidden;transition:max-height .45s ease,padding .3s}
+.ref-body.open{max-height:5000px;padding:1.25rem 1.5rem}
+
+/* grammar boxes inside ref */
+.gram-box{border-left:4px solid var(--accent2);background:#f0f4ff;border-radius:0 8px 8px 0;padding:.85rem 1.1rem;margin-bottom:1rem;font-size:13.5px}
+.gram-box-title{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent2);font-weight:700;margin-bottom:.6rem}
+.gram-box p{color:var(--text);line-height:1.65;margin-bottom:.5rem}
+.gram-box p:last-child{margin-bottom:0}
+.gram-rule{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:.6rem 1rem;font-size:13px;font-family:monospace;margin-bottom:.85rem}
+.gram-rule span{color:var(--accent);font-weight:700}
+.ex-block{border-left:3px solid var(--accent2);background:#f9f8ff;border-radius:0 6px 6px 0;padding:.45rem .85rem;margin:.4rem 0;font-size:13.5px}
+.ex-direct{font-size:12.5px;color:var(--muted);font-style:italic}
+.ex-result em{color:var(--accent2);font-style:normal;font-weight:700}
+.tense-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:.75rem}
+.tense-table th{background:var(--surface);color:var(--muted);font-weight:700;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:.5rem .75rem;text-align:left;border-bottom:1px solid var(--border)}
+.tense-table td{padding:.5rem .75rem;border-bottom:1px solid #eee;vertical-align:top}
+.tense-table tr:last-child td{border-bottom:none}
+.tense-table .before{color:var(--accent);font-weight:600}
+.tense-table .after{color:var(--accent2);font-weight:600}
+
+/* Part sections */
+.part{background:var(--white);border:1px solid var(--border);border-radius:12px;margin-bottom:1.25rem;overflow:hidden}
+.part-head{background:var(--surface);border-bottom:1px solid var(--border);padding:.85rem 1.25rem;display:flex;align-items:center;gap:.85rem}
+.part-num{background:var(--accent);color:#fff;font-size:11px;font-weight:700;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.part-title{font-size:1rem;font-weight:600;color:var(--text);flex:1}
+.part-count{font-size:11px;color:var(--muted);background:var(--white);padding:3px 10px;border-radius:20px;border:1px solid var(--border);white-space:nowrap}
+.part-body{padding:1.25rem 1.5rem}
+.instr{background:#fff9f5;border:1px solid #f0d0b8;border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:.7rem 1rem;font-size:13px;color:var(--muted);margin-bottom:1rem;line-height:1.6}
+
+/* MC */
+.mc-block{background:var(--light);border:1px solid var(--border);border-radius:8px;padding:.85rem 1rem;margin-bottom:.65rem}
+.mc-q{font-size:13.5px;font-weight:500;color:var(--text);margin-bottom:.65rem;line-height:1.55}
+.mc-opts{display:flex;gap:.5rem;flex-wrap:wrap}
+.mc-btn{padding:5px 14px;border:1.5px solid var(--border);border-radius:20px;background:var(--white);font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:500;color:var(--muted);cursor:pointer;transition:all .15s}
+.mc-btn:hover{border-color:var(--accent);color:var(--accent)}
+.mc-btn.sel{border-color:var(--accent);background:#fff3ee;color:var(--accent);font-weight:600}
+
+/* Fill-in */
+.fi-row{display:flex;flex-wrap:wrap;align-items:center;gap:5px;padding:.75rem 1rem;background:var(--light);border:1px solid var(--border);border-radius:8px;margin-bottom:.6rem;font-size:13.5px;line-height:2}
+.fi-n{font-size:10px;font-weight:700;color:var(--muted);min-width:18px}
+.fi-inp{display:inline-block;min-width:160px;padding:2px 7px;border:none;border-bottom:2px solid var(--border);background:transparent;font-family:'DM Sans',sans-serif;font-size:13.5px;font-weight:500;color:var(--text);outline:none;transition:border-color .2s;vertical-align:middle}
+.fi-inp:focus{border-bottom-color:var(--accent)}
+.fi-inp.wide{min-width:220px}
+
+/* Error correction */
+.ec-block{background:var(--light);border:1px solid var(--border);border-radius:8px;padding:.85rem 1rem;margin-bottom:.65rem}
+.ec-wrong{background:#fff0ee;border:1px solid #f0c8b8;border-left:3px solid var(--accent);border-radius:0 6px 6px 0;padding:.5rem .85rem;font-size:13.5px;color:#7a1a0e;margin-bottom:.65rem}
+.ec-wrong .err{text-decoration:line-through;opacity:.5}
+.ec-inp{width:100%;border:1.5px solid var(--border);border-radius:7px;padding:.6rem .9rem;font-family:'DM Sans',sans-serif;font-size:13.5px;font-weight:500;color:var(--text);outline:none;background:var(--white)}
+.ec-inp:focus{border-color:var(--accent)}
+
+/* Word bank */
+.word-bank{display:flex;flex-wrap:wrap;gap:.5rem;padding:.85rem 1rem;background:#f5f3ff;border:1px solid #d8d0f0;border-radius:8px;margin-bottom:1rem}
+.wb-word{padding:4px 12px;background:var(--white);border:1px solid #c8c0e8;border-radius:20px;font-size:12.5px;color:var(--accent2)}
+
+/* Sentence building */
+.sb-block{background:var(--light);border:1px solid var(--border);border-radius:8px;padding:.85rem 1rem;margin-bottom:.65rem}
+.sb-n{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem}
+.sb-words{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.65rem}
+.sb-word{padding:3px 11px;background:var(--white);border:1px solid var(--border);border-radius:20px;font-size:12.5px;color:var(--text)}
+.sb-inp{width:100%;border:1.5px solid var(--border);border-radius:7px;padding:.6rem .9rem;font-family:'DM Sans',sans-serif;font-size:13.5px;color:var(--text);outline:none;background:var(--white)}
+.sb-inp:focus{border-color:var(--accent)}
+
+/* Matching */
+.match-row{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-bottom:.6rem}
+@media(max-width:520px){.match-row{grid-template-columns:1fr}}
+.match-left{background:var(--light);border:1px solid var(--border);border-radius:8px;padding:.75rem 1rem;font-size:13px;font-weight:500;color:var(--text)}
+.match-sel{width:100%;padding:.65rem .9rem;border:1.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:12.5px;color:var(--muted);background:var(--white);outline:none;cursor:pointer}
+.match-sel:focus{border-color:var(--accent)}
+
+/* Writing */
+.wl{display:flex;align-items:flex-start;gap:.65rem;margin-bottom:.6rem}
+.wl-n{width:22px;height:22px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.wl-inp{flex:1;border:none;border-bottom:1.5px solid var(--border);background:transparent;font-family:'DM Sans',sans-serif;font-size:13.5px;color:var(--text);outline:none;padding:3px 5px}
+.wl-inp:focus{border-bottom-color:var(--accent)}
+
+/* Discussion */
+.disc-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-bottom:1rem}
+@media(max-width:560px){.disc-grid{grid-template-columns:1fr}}
+.disc-q{background:var(--light);border:1px solid var(--border);border-radius:8px;padding:.85rem 1rem;font-size:13.5px;display:flex;gap:.65rem}
+.q-icon{color:var(--accent);font-weight:700;flex-shrink:0}
+.disc-textarea{width:100%;border:1.5px solid var(--border);border-radius:8px;padding:.75rem 1rem;font-family:'DM Sans',sans-serif;font-size:13.5px;color:var(--text);outline:none;background:var(--white);resize:vertical;min-height:70px;margin-top:.5rem}
+.disc-textarea:focus{border-color:var(--accent)}
+.starters-box{background:#f5f3ff;border:1px solid #d8d0f0;border-radius:8px;padding:1rem 1.25rem;margin-bottom:1rem}
+.starters-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:.65rem;font-weight:700}
+.starters-list{display:flex;flex-wrap:wrap;gap:.5rem}
+.starter-chip{background:#fff;border:1px solid #c8c0e8;border-radius:20px;padding:4px 12px;font-size:12.5px;color:var(--accent2)}
+
+/* Save bar */
+.save-bar{position:fixed;bottom:18px;right:18px;display:flex;gap:7px;z-index:999}
+.save-btn{padding:7px 16px;background:var(--accent);color:#fff;border:none;border-radius:20px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;cursor:pointer;box-shadow:0 3px 12px rgba(181,67,10,.3);transition:opacity .15s}
+.save-btn:hover{opacity:.85}
+.save-btn.reset{background:var(--white);border:1.5px solid var(--border);color:var(--muted)}
+#save-toast{position:fixed;bottom:58px;right:18px;background:var(--accent);color:#fff;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;padding:6px 16px;border-radius:20px;opacity:0;transform:translateY(8px);transition:all .3s;pointer-events:none;z-index:1000}
+
+@media(max-width:600px){.disc-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="show-tag">Homework · B1+ · 45–60 minutes · Student: Tuba</div>
+  <div class="lesson-title">Mysteries, Theories &amp; <span>Survival</span></div>
+  <div class="subtitle">Based on <strong>FROM</strong> — follow-up homework for the lesson on relative clauses, reported speech &amp; discussion</div>
+  <div class="meta-row">
+    <span class="meta-pill"><strong>Grammar:</strong> Relative Clauses · Reported Speech</span>
+    <span class="meta-pill"><strong>Skills:</strong> Vocabulary · Discussion · Writing</span>
+    <span class="meta-pill"><strong>Level:</strong> B1+</span>
+  </div>
+</div>
+
+<!-- GRAMMAR REFERENCE ACCORDION -->
+<div class="ref-block">
+  <div class="ref-top" onclick="togRef()">
+    <div class="ref-ico">📖</div>
+    <div class="ref-meta">
+      <h2>Grammar Reference — Relative Clauses &amp; Reported Speech</h2>
+      <p>Tap to open · Read before starting the exercises</p>
+    </div>
+    <span class="ref-chev" id="refChev">▼</span>
+  </div>
+  <div class="ref-body" id="refBody">
+
+    <div class="gram-box">
+      <div class="gram-box-title">Relative Clauses — who / which / where</div>
+      <p>A relative clause gives extra information about a person, thing, or place without starting a new sentence. It comes <strong>directly after</strong> the noun it describes.</p>
+      <p><strong>who</strong> → for people &nbsp;·&nbsp; <strong>which</strong> → for things &nbsp;·&nbsp; <strong>where</strong> → for places</p>
+    </div>
+    <div class="gram-rule"><span>who</span> → people &nbsp;&nbsp;&nbsp; <span>which</span> → things &nbsp;&nbsp;&nbsp; <span>where</span> → places</div>
+    <div class="ex-block"><div class="ex-direct">Boyd is the man. He protects everyone.</div><div class="ex-result">Boyd is the man <em>who</em> protects everyone.</div></div>
+    <div class="ex-block"><div class="ex-direct">The talisman keeps people safe. It hangs on the door.</div><div class="ex-result">The talisman is an object <em>which</em> keeps people safe.</div></div>
+    <div class="ex-block"><div class="ex-direct">The town traps people. Nobody can escape there.</div><div class="ex-result">The town is a place <em>where</em> nobody can escape.</div></div>
+
+    <div class="gram-box" style="margin-top:1.25rem">
+      <div class="gram-box-title">Reported Speech — tense changes</div>
+      <p>Reported speech tells someone what another person said — without using their exact words. The verb tense moves back one step into the past.</p>
+    </div>
+    <table class="tense-table">
+      <thead><tr><th>Direct speech</th><th>Reported speech</th></tr></thead>
+      <tbody>
+        <tr><td class="before">is / are</td><td class="after">was / were</td></tr>
+        <tr><td class="before">need / needs</td><td class="after">needed</td></tr>
+        <tr><td class="before">will</td><td class="after">would</td></tr>
+        <tr><td class="before">can</td><td class="after">could</td></tr>
+        <tr><td class="before">have / has seen</td><td class="after">had seen</td></tr>
+        <tr><td class="before">must</td><td class="after">had to</td></tr>
+        <tr><td class="before">know / knows</td><td class="after">knew</td></tr>
+      </tbody>
+    </table>
+    <div class="ex-block"><div class="ex-direct">"We need answers." — Boyd</div><div class="ex-result">Boyd said that they <em>needed</em> answers.</div></div>
+    <div class="ex-block"><div class="ex-direct">"I have seen this before." — Victor</div><div class="ex-result">Victor said that he <em>had seen</em> it before.</div></div>
+    <div class="ex-block"><div class="ex-direct">"We must find a way out." — Tabitha</div><div class="ex-result">Tabitha said that they <em>had to</em> find a way out.</div></div>
+  </div>
+</div>
+
+<!-- PART 1: Relative Clauses MC -->
+<div class="part">
+  <div class="part-head">
+    <div class="part-num">1</div>
+    <div class="part-title">Relative Clauses — who, which, or where?</div>
+    <div class="part-count">6 questions</div>
+  </div>
+  <div class="part-body">
+    <div class="instr">Choose the correct relative pronoun for each sentence. Think: is it a person, a thing, or a place?</div>
+    <div class="mc-block"><div class="mc-q">1. Boyd is the man ___ protects everyone in the town.</div><div class="mc-opts"><button class="mc-btn" onclick="sel(this)">who</button><button class="mc-btn" onclick="sel(this)">which</button><button class="mc-btn" onclick="sel(this)">where</button></div></div>
+    <div class="mc-block"><div class="mc-q">2. The talisman is an object ___ keeps people safe at night.</div><div class="mc-opts"><button class="mc-btn" onclick="sel(this)">who</button><button class="mc-btn" onclick="sel(this)">which</button><button class="mc-btn" onclick="sel(this)">where</button></div></div>
+    <div class="mc-block"><div class="mc-q">3. The town is a place ___ nobody has ever escaped.</div><div class="mc-opts"><button class="mc-btn" onclick="sel(this)">who</button><button class="mc-btn" onclick="sel(this)">which</button><button class="mc-btn" onclick="sel(this)">where</button></div></div>
+    <div class="mc-block"><div class="mc-q">4. Victor is a character ___ knows many secrets about the town's past.</div><div class="mc-opts"><button class="mc-btn" onclick="sel(this)">who</button><button class="mc-btn" onclick="sel(this)">which</button><button class="mc-btn" onclick="sel(this)">where</button></div></div>
+    <div class="mc-block"><div class="mc-q">5. The creatures appear at night, ___ makes everyone terrified.</div><div class="mc-opts"><button class="mc-btn" onclick="sel(this)">who</button><button class="mc-btn" onclick="sel(this)">which</button><button class="mc-btn" onclick="sel(this)">where</button></div></div>
+    <div class="mc-block"><div class="mc-q">6. The tree is a symbol ___ appears in strange places throughout the show.</div><div class="mc-opts"><button class="mc-btn" onclick="sel(this)">who</button><button class="mc-btn" onclick="sel(this)">which</button><button class="mc-btn" onclick="sel(this)">where</button></div></div>
+  </div>
+</div>
+
+<!-- PART 2: Relative Clauses — Join the sentences -->
+<div class="part">
+  <div class="part-head">
+    <div class="part-num">2</div>
+    <div class="part-title">Relative Clauses — Join the two sentences into one</div>
+    <div class="part-count">5 questions</div>
+  </div>
+  <div class="part-body">
+    <div class="instr">Combine the two sentences using <em>who</em>, <em>which</em>, or <em>where</em>. Write your answer in the box below each pair.</div>
+    <div class="ec-block">
+      <div class="ec-wrong">Boyd protects people. / Boyd is very brave.</div>
+      <input class="ec-inp" id="rc1" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="Boyd is the man who...">
+    </div>
+    <div class="ec-block">
+      <div class="ec-wrong">The creatures appear at night. / The creatures are extremely dangerous.</div>
+      <input class="ec-inp" id="rc2" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="The creatures are monsters which...">
+    </div>
+    <div class="ec-block">
+      <div class="ec-wrong">Victor knows many secrets. / Victor has lived in the town for years.</div>
+      <input class="ec-inp" id="rc3" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="Victor is a man who...">
+    </div>
+    <div class="ec-block">
+      <div class="ec-wrong">The town has many mysteries. / Nobody can escape the town.</div>
+      <input class="ec-inp" id="rc4" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="The town is a place where...">
+    </div>
+    <div class="ec-block">
+      <div class="ec-wrong">The tree appears often. / The tree may be very important.</div>
+      <input class="ec-inp" id="rc5" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="The tree is a symbol which...">
+    </div>
+  </div>
+</div>
+
+<!-- PART 3: Relative Clauses — Error correction -->
+<div class="part">
+  <div class="part-head">
+    <div class="part-num">3</div>
+    <div class="part-title">Relative Clauses — Correct the errors</div>
+    <div class="part-count">4 questions</div>
+  </div>
+  <div class="part-body">
+    <div class="instr">Each sentence has one mistake with a relative pronoun. Rewrite it correctly.</div>
+    <div class="ec-block">
+      <div class="ec-wrong">The town is a place <span class="err">which</span> nobody can escape.</div>
+      <input class="ec-inp" id="rce1" autocomplete="off" autocorrect="off" spellcheck="false">
+    </div>
+    <div class="ec-block">
+      <div class="ec-wrong">Boyd is the man <span class="err">which</span> tries to protect everyone.</div>
+      <input class="ec-inp" id="rce2" autocomplete="off" autocorrect="off" spellcheck="false">
+    </div>
+    <div class="ec-block">
+      <div class="ec-wrong">The talisman is an object <span class="err">who</span> protects people from the creatures.</div>
+      <input class="ec-inp" id="rce3" autocomplete="off" autocorrect="off" spellcheck="false">
+    </div>
+    <div class="ec-block">
+      <div class="ec-wrong">Victor is a character <span class="err">where</span> knows too many secrets.</div>
+      <input class="ec-inp" id="rce4" autocomplete="off" autocorrect="off" spellcheck="false">
+    </div>
+  </div>
+</div>
+
+<!-- PART 4: Relative Clauses — Sentence building -->
+<div class="part">
+  <div class="part-head">
+    <div class="part-num">4</div>
+    <div class="part-title">Relative Clauses — Build the sentence</div>
+    <div class="part-count">3 questions</div>
+  </div>
+  <div class="part-body">
+    <div class="instr">Arrange the words to make a correct sentence with a relative clause.</div>
+    <div class="sb-block">
+      <div class="sb-n">Question 1</div>
+      <div class="sb-words"><span class="sb-word">Boyd</span><span class="sb-word">is the man</span><span class="sb-word">who</span><span class="sb-word">everyone</span><span class="sb-word">protects</span></div>
+      <input class="sb-inp" id="sb1" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="Write the sentence here...">
+    </div>
+    <div class="sb-block">
+      <div class="sb-n">Question 2</div>
+      <div class="sb-words"><span class="sb-word">a place</span><span class="sb-word">is</span><span class="sb-word">The town</span><span class="sb-word">where</span><span class="sb-word">nobody can leave</span></div>
+      <input class="sb-inp" id="sb2" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="Write the sentence here...">
+    </div>
+    <div class="sb-block">
+      <div class="sb-n">Question 3</div>
+      <div class="sb-words"><span class="sb-word">The creatures</span><span class="sb-word">which</span><span class="sb-word">are monsters</span><span class="sb-word">at night</span><span class="sb-word">appear</span></div>
+      <input class="sb-inp" id="sb3" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="Write the sentence here...">
+    </div>
+  </div>
+</div>
+
+<!-- PART 5: Reported Speech — MC tense change -->
+<div class="part">
+  <div class="part-head">
+    <div class="part-num">5</div>
+    <div class="part-title">Reported Speech — Choose the correct tense change</div>
+    <div class="part-count">6 questions</div>
+  </div>
+  <div class="part-body">
+    <div class="instr">The direct speech is given. Choose the correct reported speech verb form.</div>
+    <div class="mc-block"><div class="mc-q">1. Boyd said: "We <strong>need</strong> answers." → Boyd said that they ___ answers.</div><div class="mc-opts"><button class="mc-btn" onclick="sel(this)">need</button><button class="mc-btn" onclick="sel(this)">needed</button><button class="mc-btn" onclick="sel(this)">will need</button></div></div>
+    <div class="mc-block"><div class="mc-q">2. Victor said: "I <strong>have seen</strong> this before." → Victor said that he ___ it before.</div><div class="mc-opts"><button class="mc-btn" onclick="sel(this)">has seen</button><button class="mc-btn" onclick="sel(this)">had seen</button><button class="mc-btn" onclick="sel(this)">saw</button></div></div>
+    <div class="mc-block"><div class="mc-q">3. Jim said: "This place <strong>is</strong> dangerous." → Jim said that the place ___ dangerous.</div><div class="mc-opts"><button class="mc-btn" onclick="sel(this)">is</button><button class="mc-btn" onclick="sel(this)">was</button><button class="mc-btn" onclick="sel(this)">will be</button></div></div>
+    <div class="mc-block"><div class="mc-q">4. Tabitha said: "We <strong>must</strong> find a way out." → Tabitha said that they ___ find a way out.</div><div class="mc-opts"><button class="mc-btn" onclick="sel(this)">must</button><button class="mc-btn" onclick="sel(this)">had to</button><button class="mc-btn" onclick="sel(this)">would must</button></div></div>
+    <div class="mc-block"><div class="mc-q">5. Donna said: "We <strong>can</strong> survive." → Donna said that they ___ survive.</div><div class="mc-opts"><button class="mc-btn" onclick="sel(this)">can</button><button class="mc-btn" onclick="sel(this)">could</button><button class="mc-btn" onclick="sel(this)">would</button></div></div>
+    <div class="mc-block"><div class="mc-q">6. Boyd said: "I <strong>will not</strong> give up." → Boyd said that he ___ give up.</div><div class="mc-opts"><button class="mc-btn" onclick="sel(this)">will not</button><button class="mc-btn" onclick="sel(this)">would not</button><button class="mc-btn" onclick="sel(this)">did not</button></div></div>
+  </div>
+</div>
+
+<!-- PART 6: Reported Speech — Write the full sentence -->
+<div class="part">
+  <div class="part-head">
+    <div class="part-num">6</div>
+    <div class="part-title">Reported Speech — Write the full reported sentence</div>
+    <div class="part-count">5 questions</div>
+  </div>
+  <div class="part-body">
+    <div class="instr">Change each sentence from direct speech to reported speech. Write the complete sentence.</div>
+    <div class="ec-block">
+      <div class="ec-wrong">Tabitha: "We need more answers."</div>
+      <input class="ec-inp" id="rs1" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="Tabitha said that...">
+    </div>
+    <div class="ec-block">
+      <div class="ec-wrong">Boyd: "We cannot give up."</div>
+      <input class="ec-inp" id="rs2" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="Boyd said that...">
+    </div>
+    <div class="ec-block">
+      <div class="ec-wrong">Jim: "I don't trust this place."</div>
+      <input class="ec-inp" id="rs3" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="Jim said that...">
+    </div>
+    <div class="ec-block">
+      <div class="ec-wrong">Donna: "We must stay calm."</div>
+      <input class="ec-inp" id="rs4" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="Donna said that...">
+    </div>
+    <div class="ec-block">
+      <div class="ec-wrong">Victor: "I know something important."</div>
+      <input class="ec-inp" id="rs5" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="Victor said that...">
+    </div>
+  </div>
+</div>
+
+<!-- PART 7: Reported Speech — Error correction -->
+<div class="part">
+  <div class="part-head">
+    <div class="part-num">7</div>
+    <div class="part-title">Reported Speech — Correct the tense errors</div>
+    <div class="part-count">4 questions</div>
+  </div>
+  <div class="part-body">
+    <div class="instr">Each reported speech sentence has a tense error. Rewrite it correctly.</div>
+    <div class="ec-block">
+      <div class="ec-wrong">Boyd said that they <span class="err">need</span> answers.</div>
+      <input class="ec-inp" id="rse1" autocomplete="off" autocorrect="off" spellcheck="false">
+    </div>
+    <div class="ec-block">
+      <div class="ec-wrong">Victor said that he <span class="err">has seen</span> it before.</div>
+      <input class="ec-inp" id="rse2" autocomplete="off" autocorrect="off" spellcheck="false">
+    </div>
+    <div class="ec-block">
+      <div class="ec-wrong">Jim said that the place <span class="err">is</span> dangerous.</div>
+      <input class="ec-inp" id="rse3" autocomplete="off" autocorrect="off" spellcheck="false">
+    </div>
+    <div class="ec-block">
+      <div class="ec-wrong">Donna said that they <span class="err">must</span> stay calm.</div>
+      <input class="ec-inp" id="rse4" autocomplete="off" autocorrect="off" spellcheck="false">
+    </div>
+  </div>
+</div>
+
+<!-- PART 8: Word bank — combining both grammar points -->
+<div class="part">
+  <div class="part-head">
+    <div class="part-num">8</div>
+    <div class="part-title">Word Bank — Complete the sentences</div>
+    <div class="part-count">5 questions</div>
+  </div>
+  <div class="part-body">
+    <div class="instr">Use a word or phrase from the bank to complete each sentence. Use each once.</div>
+    <div class="word-bank">
+      <span class="wb-word">who had seen</span><span class="wb-word">where nobody</span><span class="wb-word">which appeared</span><span class="wb-word">that they could not</span><span class="wb-word">that the town was</span>
+    </div>
+    <div class="fi-row"><span class="fi-n">1</span><span>The town is a place</span><input class="fi-inp wide" id="wb1" autocomplete="off" autocorrect="off" spellcheck="false"><span>can escape.</span></div>
+    <div class="fi-row"><span class="fi-n">2</span><span>Victor was a man</span><input class="fi-inp wide" id="wb2" autocomplete="off" autocorrect="off" spellcheck="false"><span>the creatures many times.</span></div>
+    <div class="fi-row"><span class="fi-n">3</span><span>Boyd said</span><input class="fi-inp wide" id="wb3" autocomplete="off" autocorrect="off" spellcheck="false"><span>give up.</span></div>
+    <div class="fi-row"><span class="fi-n">4</span><span>Jim said</span><input class="fi-inp wide" id="wb4" autocomplete="off" autocorrect="off" spellcheck="false"><span>dangerous.</span></div>
+    <div class="fi-row"><span class="fi-n">5</span><span>The strange symbol</span><input class="fi-inp wide" id="wb5" autocomplete="off" autocorrect="off" spellcheck="false"><span>on the walls was very mysterious.</span></div>
+  </div>
+</div>
+
+<!-- PART 9: Discussion — Theory Time -->
+<div class="part">
+  <div class="part-head">
+    <div class="part-num">9</div>
+    <div class="part-title">Speaking &amp; Discussion — Theory Time</div>
+    <div class="part-count">Written responses</div>
+  </div>
+  <div class="part-body">
+    <div class="instr">For each question, write a full answer of at least 2–3 sentences. Use the opinion starters below. Try to include at least one relative clause AND one piece of reported speech in your answers.</div>
+
+    <div class="starters-box">
+      <div class="starters-label">Opinion starters — use these in your answers</div>
+      <div class="starters-list">
+        <span class="starter-chip">I believe that...</span>
+        <span class="starter-chip">My theory is that...</span>
+        <span class="starter-chip">In my opinion...</span>
+        <span class="starter-chip">One possibility is that...</span>
+        <span class="starter-chip">It seems likely that...</span>
+        <span class="starter-chip">I strongly suspect that...</span>
+        <span class="starter-chip">From the evidence we have seen...</span>
+        <span class="starter-chip">I agree / I disagree because...</span>
+      </div>
+    </div>
+
+    <div class="disc-grid">
+      <div class="disc-q"><span class="q-icon">?</span>What do you think the town really is?</div>
+      <div class="disc-q"><span class="q-icon">?</span>Why do you think people can't leave?</div>
+      <div class="disc-q"><span class="q-icon">?</span>Which character do you trust the most — and why?</div>
+      <div class="disc-q"><span class="q-icon">?</span>What do you think the creatures really want?</div>
+    </div>
+
+    <div style="margin-bottom:.65rem">
+      <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-bottom:.4rem">Question 1 — What do you think the town really is?</div>
+      <textarea class="disc-textarea" id="d1" placeholder="My theory is that the town is..."></textarea>
+    </div>
+    <div style="margin-bottom:.65rem">
+      <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-bottom:.4rem">Question 2 — Why do you think people can't leave?</div>
+      <textarea class="disc-textarea" id="d2" placeholder="I believe that the reason is..."></textarea>
+    </div>
+    <div style="margin-bottom:.65rem">
+      <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-bottom:.4rem">Question 3 — Which character do you trust the most — and why?</div>
+      <textarea class="disc-textarea" id="d3" placeholder="The character who I trust the most is..."></textarea>
+    </div>
+    <div style="margin-bottom:.65rem">
+      <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-bottom:.4rem">Question 4 — What do you think the creatures really want?</div>
+      <textarea class="disc-textarea" id="d4" placeholder="From the evidence we have seen..."></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- PART 10: Extended Writing -->
+<div class="part">
+  <div class="part-head">
+    <div class="part-num">10</div>
+    <div class="part-title">Extended Writing — My Theory About the Town</div>
+    <div class="part-count">200–250 words</div>
+  </div>
+  <div class="part-body">
+    <div class="instr">Write a paragraph of 200–250 words presenting your theory about the town in FROM. You must include: at least 5 vocabulary words from the lesson · 3 relative clauses (who / which / where) · 2 examples of reported speech · clear reasons for your opinions · a prediction about Season 2.</div>
+    <div class="wl"><div class="wl-n">1</div><input class="wl-inp" id="w1" placeholder="Start your theory here..."></div>
+    <div class="wl"><div class="wl-n">2</div><input class="wl-inp" id="w2"></div>
+    <div class="wl"><div class="wl-n">3</div><input class="wl-inp" id="w3"></div>
+    <div class="wl"><div class="wl-n">4</div><input class="wl-inp" id="w4"></div>
+    <div class="wl"><div class="wl-n">5</div><input class="wl-inp" id="w5"></div>
+    <div class="wl"><div class="wl-n">6</div><input class="wl-inp" id="w6"></div>
+    <div class="wl"><div class="wl-n">7</div><input class="wl-inp" id="w7"></div>
+    <div class="wl"><div class="wl-n">8</div><input class="wl-inp" id="w8"></div>
+  </div>
+</div>
+
+<div style="text-align:center;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border)">
+  <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:700">Tuba · B1+ · FROM Series Homework</div>
+</div>
+
+</div><!-- /wrap -->
+
+<div id="save-toast">✓ Saved!</div>
+<div class="save-bar">
+  <button class="save-btn reset" onclick="clearProgress('from_hw_tuba')">Reset</button>
+  <button class="save-btn" onclick="saveProgress('from_hw_tuba')">Save Progress</button>
+</div>
+
+<script>
+function togRef(){const b=document.getElementById('refBody'),c=document.getElementById('refChev');b.classList.toggle('open');c.style.transform=b.classList.contains('open')?'rotate(180deg)':'';}
+function sel(btn){btn.closest('.mc-opts').querySelectorAll('.mc-btn').forEach(b=>b.classList.remove('sel'));btn.classList.add('sel');}
+function saveProgress(key){
+  const s={inputs:{},ta:{},mc:{}};
+  document.querySelectorAll('input[id]').forEach(e=>{s.inputs[e.id]=e.value;});
+  document.querySelectorAll('textarea[id]').forEach(e=>{s.ta[e.id]=e.value;});
+  document.querySelectorAll('.mc-block').forEach((b,i)=>{const x=b.querySelector('.mc-btn.sel');s.mc[i]=x?x.textContent.trim():'';});
+  try{localStorage.setItem(key,JSON.stringify(s));showToast();}catch(e){}
+}
+function loadProgress(key){
+  try{
+    const r=localStorage.getItem(key);if(!r)return;
+    const s=JSON.parse(r);
+    if(s.inputs)Object.entries(s.inputs).forEach(([id,v])=>{const el=document.getElementById(id);if(el)el.value=v;});
+    if(s.ta)Object.entries(s.ta).forEach(([id,v])=>{const el=document.getElementById(id);if(el)el.value=v;});
+    if(s.mc)document.querySelectorAll('.mc-block').forEach((b,i)=>{const saved=s.mc[i];if(!saved)return;b.querySelectorAll('.mc-btn').forEach(btn=>{if(btn.textContent.trim()===saved)btn.classList.add('sel');});});
+  }catch(e){}
+}
+function clearProgress(key){if(confirm('Clear all saved progress?')){localStorage.removeItem(key);location.reload();}}
+function showToast(){const t=document.getElementById('save-toast');t.style.opacity='1';t.style.transform='translateY(0)';setTimeout(()=>{t.style.opacity='0';t.style.transform='translateY(8px)';},2000);}
+document.addEventListener('input',()=>saveProgress('from_hw_tuba'));
+document.addEventListener('change',()=>saveProgress('from_hw_tuba'));
+document.addEventListener('DOMContentLoaded',()=>loadProgress('from_hw_tuba'));
+</script>
+</body>
+</html>
